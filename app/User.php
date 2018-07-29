@@ -1,0 +1,73 @@
+<?php
+
+namespace App;
+
+use Auth;
+use Illuminate\Notifications\Notifiable;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use phpDocumentor\Reflection\Types\Integer;
+use Carbon\Carbon;
+
+class User extends Authenticatable
+{
+    use Notifiable, HasRoles;
+
+    const ROLES = [
+        1 => 'Worker',
+        2 => 'Recruiter',
+        3 => 'Admin',
+        4 => 'SuperAdmin',
+    ];
+
+    const SEX = [
+      0 => 'Не указан',
+      1 => 'Жен',
+      2 => 'Муж'
+    ];
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'name', 'email', 'password', 'avatar'
+    ];
+
+    /**
+     * The attributes that should be hidden for arrays.
+     *
+     * @var array
+     */
+    protected $hidden = [
+        'password', 'remember_token',
+    ];
+
+
+
+    /**
+     * @param string $password
+     */
+    public function setPasswordAttribute($password)
+    {
+        if ($password) {
+            $this->attributes['password'] = bcrypt($password);
+            $this->attributes['remember_token'] = null;
+        }
+    }
+
+    public function getRoleAttribute()
+    {
+        return $this::ROLES[$this->role_id];
+    }
+
+    public function getSexAttribute()
+    {
+        return $this::SEX[$this->sex_id];
+    }
+
+    public function pay (Integer $days)
+    {
+        $this->attributes['password'] = Carbon::now(+$days);
+        $this->save();
+    }
+}
