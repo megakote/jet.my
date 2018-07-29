@@ -13,6 +13,11 @@ class DatabaseSeeder extends Seeder
     {
         $this->call(MenuSeeder::class);
         $this->call(UserSeeder::class);
-//        factory(App\Models\News::class, 50)->create();
+
+
+        factory(App\News::class, 50)->create();
+        factory(App\MainPageReviews::class, 5)->create();
+        factory(App\Photo::class, 200)->create();
+        factory(App\PhotoAlbum::class, 10)->create();
     }
 }

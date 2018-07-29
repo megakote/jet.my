@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCoursesTable extends Migration
+class CreatePhotoAlbumsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,12 @@ class CreateCoursesTable extends Migration
      */
     public function up()
     {
-        Schema::create('courses', function (Blueprint $table) {
-            $table->increments('id');
+        Schema::create('photo_albums', function (Blueprint $table) {
+            $table->increments('id')->unsigned();
             $table->string('name');
-            $table->date('date')->default(0);
             $table->text('description');
+            $table->string('cover_image');
+            $table->boolean('on_main')->default(false);
             $table->timestamps();
         });
     }
@@ -29,6 +30,6 @@ class CreateCoursesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('courses');
+        Schema::dropIfExists('photo_albums');
     }
 }
