@@ -13,7 +13,7 @@ use Faker\Generator as Faker;
 |
 */
 
-$factory->define(App\MainPageReviews::class, function (Faker $faker) {
+$factory->define(App\Models\MainPageReviews::class, function (Faker $faker) {
 
     return [
         'name' => $faker->name,

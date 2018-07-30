@@ -19,6 +19,10 @@ $factory->define(App\User::class, function (Faker $faker) {
     return [
         'name' => $faker->name,
         'email' => $faker->unique()->safeEmail,
+        'surname' => $faker->name,
+        'patronymic' => $faker->name,
+        'tel' => $faker->rand(1111111111, 99999999999),
+        'skype' => $faker->str_random(10),
         'password' => $password ?: $password = bcrypt('secret'),
         'remember_token' => str_random(10),
         'role_id' => rand(1, 2),

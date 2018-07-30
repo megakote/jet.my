@@ -13,7 +13,7 @@ use Faker\Generator as Faker;
 |
 */
 
-$factory->define(App\News::class, function (Faker $faker) {
+$factory->define(App\Models\News::class, function (Faker $faker) {
 
     return [
         'image_cover' => 'http://bizavnews.ru/images/images_full/Jet-Service_team.jpg',
