@@ -32,7 +32,7 @@ class HomeController extends Controller
         $data = [];
         $data['slider'] = MainPageSlider::orderBy('order', 'asc')->get();
         $data['courses'] = Course::orderBy('date', 'asc')->limit(10)->get();
-        $data['news'] = News::limit(10)->get();
+        $data['news'] = News::limit(4)->get();
         $data['reviews'] = MainPageReviews::orderBy('order', 'asc')->get();
         $data['albums'] = PhotoAlbum::where('on_main', 'true')->limit(20)->get();
 

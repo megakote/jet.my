@@ -30,13 +30,10 @@ class Course extends Model
 
     public function getDateFormattedAttribute()
     {
-        dd($this['date']);
         if (!$this['date']) {
             return 'Online';
         } else {
-
-            $data = $this['date']->format('d-M-yy');
-            $data = explode('-', $data);
+            $data = explode('-', $this['date']);
             return $data;
         }
     }

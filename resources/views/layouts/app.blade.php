@@ -8,9 +8,9 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Lora%3A400%2C700%2C400italic%2C700italic&#038;subset=latin%2Clatin-ext&#038;ver=1.0.0' type='text/css' />
-    <link rel='stylesheet'  href='{{ asset('/css/bootstrap.min.css) }}' type='text/css' />
-    <link rel='stylesheet'  href='{{ asset('/css/style.css') }}' type='text/css' media='all' />
+    <link rel='stylesheet' href="https://fonts.googleapis.com/css?family=Lora%3A400%2C700%2C400italic%2C700italic&#038;subset=latin%2Clatin-ext&#038;ver=1.0.0" type='text/css' />
+    <link rel='stylesheet' href="{{ asset('/css/bootstrap.min.css') }}" type='text/css' />
+    <link rel='stylesheet' href='{{ asset('/css/style.css') }}' type='text/css' media='all' />
     <link rel="stylesheet" href="{{ asset('/css/assets/owl.carousel.min.css') }}">
     <link rel="stylesheet" href="{{ asset('/css/assets/owl.theme.default.min.css') }}">
 

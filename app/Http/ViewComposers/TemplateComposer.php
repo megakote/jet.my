@@ -38,9 +38,7 @@ class TemplateComposer
         ])->get();
         $view->with('menu_header', $menu_header);
 
-        $main_menu = Page::all()->take(11);
 
-        $view->with('main_menu', $main_menu);
 
         //Меню подвал
 //        $menu_footer1 = Cache::remember('menu_footer1', 10000, function () {

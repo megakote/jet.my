@@ -21,7 +21,7 @@
                                 <div class="carousel-caption d-md-block">
                                     <div class="slider_title">
                                         <div class="slider-btn">
-                                            {{ $slide->content }}
+                                            {!! $slide->content !!}
                                         </div>
                                     </div>
                                 </div>
@@ -51,7 +51,7 @@
                                             @foreach($courses as $course)
                                                 <div class="vc_tta-panel" id="0{{ $course->id }}" data-vc-content=".vc_tta-panel-body">
                                                     <div class="vc_tta-panel-heading">
-                                                        <h4 class="vc_tta-panel-title vc_tta-controls-icon-position-left"><a href="#02" data-vc-accordion data-vc-container=".vc_tta-container">
+                                                        <h4 class="vc_tta-panel-title vc_tta-controls-icon-position-left"><a href="#0{{ $course->id }}" data-vc-accordion data-vc-container=".vc_tta-container">
                                                                 <div class="anons_kurs_block">
                                                                     <div class="anons_kurs_block2">
                                                                         @if(!$course->date)
@@ -70,7 +70,7 @@
                                                     <div class="vc_tta-panel-body color_onons_text">
                                                         <div class="wpb_text_column wpb_content_element " >
                                                             <div class="wpb_wrapper left_block_anons">
-                                                                {{ $course->description }}
+                                                                {!!  $course->description !!}
                                                             </div>
                                                         </div>
                                                     </div>
@@ -202,8 +202,8 @@
                                                 <img src="/img/plus-icon.png" class="img-fluid close-icon" alt="plus-icon">
                                             </div>
                                             <a href="" class="course-box-content">
-                                                <h3>{{ $item->format('d-M-yy') }}</h3>
-                                                <p>{{ $item->created_at }}</p>
+                                                <h3>{{ $item->created_at->format('Y.M.d') }}</h3>
+                                                <p>{{ $item->description }}</p>
                                             </a>
                                         </div>
                                     </div>
