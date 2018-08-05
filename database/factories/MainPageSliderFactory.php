@@ -13,11 +13,10 @@ use Faker\Generator as Faker;
 |
 */
 
-$factory->define(App\Models\Photo::class, function (Faker $faker) {
+$factory->define(App\Models\MainPageSlider::class, function (Faker $faker) {
 
     return [
-        'image' => 'http://bizavnews.ru/images/images_full/Jet-Service_team.jpg',
-        'album_photo_id' => $faker->biasedNumberBetween(1, 10),
-        'description' => $faker->text(100)
+        'image' => "/img/slider/001.jpg",
+        'content' => "<a href=\"#\" class=\"btn btn-default\">Курс обучения</a><a href=\"#\" class=\"btn btn-default\">База резюме</a>"
     ];
 });

@@ -21,11 +21,11 @@ $factory->define(App\User::class, function (Faker $faker) {
         'email' => $faker->unique()->safeEmail,
         'surname' => $faker->name,
         'patronymic' => $faker->name,
-        'tel' => $faker->rand(1111111111, 99999999999),
-        'skype' => $faker->str_random(10),
+        'tel' => $faker->biasedNumberBetween(1111111111, 99999999999),
+        'skype' => str_random(10),
         'password' => $password ?: $password = bcrypt('secret'),
         'remember_token' => str_random(10),
-        'role_id' => rand(1, 2),
-        'sex_id' => rand(0, 2),
+        'role_id' => $faker->biasedNumberBetween(1, 2),
+        'sex_id' => $faker->biasedNumberBetween(1, 2),
     ];
 });

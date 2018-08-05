@@ -13,11 +13,14 @@ use Faker\Generator as Faker;
 |
 */
 
-$factory->define(App\Models\Photo::class, function (Faker $faker) {
-
+$factory->define(App\Models\Course::class, function (Faker $faker) {
     return [
-        'image' => 'http://bizavnews.ru/images/images_full/Jet-Service_team.jpg',
-        'album_photo_id' => $faker->biasedNumberBetween(1, 10),
-        'description' => $faker->text(100)
+        'type' => $faker->numberBetween(0, 2),
+        'name' => $faker->unique()->text(15),
+        'duration' => '2 недели, 80 ак.ч.',
+        'date' => $faker->date($format = 'Y-m-d', $max = '+70 days'),
+        'description' => $faker->text(50),
+        'content' => $faker->text(350),
+        'price' => $faker->numberBetween(1000, 5000),
     ];
 });

@@ -17,7 +17,7 @@ $factory->define(App\Models\News::class, function (Faker $faker) {
 
     return [
         'image_cover' => 'http://bizavnews.ru/images/images_full/Jet-Service_team.jpg',
-        'name' => $faker->text(40),
+        'title' => $faker->unique()->text(40),
         'description' => $faker->text(100),
         'body' => $faker->text
     ];

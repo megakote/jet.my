@@ -15,7 +15,8 @@ class CreatePhotoAlbumsTable extends Migration
     {
         Schema::create('photo_albums', function (Blueprint $table) {
             $table->increments('id')->unsigned();
-            $table->string('name');
+            $table->string('title')->unique();
+            $table->string('slug')->unique();
             $table->text('description');
             $table->string('cover_image');
             $table->boolean('on_main')->default(false);

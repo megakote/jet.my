@@ -15,9 +15,12 @@ class DatabaseSeeder extends Seeder
         $this->call(UserSeeder::class);
 
 
-        factory(App\News::class, 50)->create();
-        factory(App\MainPageReviews::class, 5)->create();
-        factory(App\Photo::class, 200)->create();
-        factory(App\PhotoAlbum::class, 10)->create();
+        factory(App\User::class, 30)->create();
+        factory(App\Models\News::class, 50)->create();
+        factory(App\Models\MainPageReviews::class, 5)->create();
+        factory(App\Models\Photo::class, 200)->create();
+        factory(App\Models\PhotoAlbum::class, 30)->create();
+        factory(App\Models\MainPageSlider::class, 7)->create();
+        factory(App\Models\Course::class, 30)->create();
     }
 }

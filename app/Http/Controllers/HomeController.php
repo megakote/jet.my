@@ -4,11 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Models\MainPagePricesTabs;
-use App\Models\MainPageClient;
-use App\Models\Feedback;
-use App\Models\Slider;
-use App\Models\Order;
+use App\Models\MainPageSlider;
+use App\Models\MainPageReviews;
+use App\Models\PhotoAlbum;
+use App\Models\Course;
+use App\Models\News;
 
 class HomeController extends Controller
 {
@@ -30,10 +30,11 @@ class HomeController extends Controller
     public function index(Request $request)
     {
         $data = [];
-        $data['pricesTabs'] = MainPagePricesTabs::all()->sortBy('order');
-        $data['clients'] = MainPageClient::all();
-        $data['feedback'] = Feedback::all();
-        $data['slider'] = Slider::orderBy('order', 'asc')->get();
+        $data['slider'] = MainPageSlider::orderBy('order', 'asc')->get();
+        $data['courses'] = Course::orderBy('date', 'asc')->limit(10)->get();
+        $data['news'] = News::limit(10)->get();
+        $data['reviews'] = MainPageReviews::orderBy('order', 'asc')->get();
+        $data['albums'] = PhotoAlbum::where('on_main', 'true')->limit(20)->get();
 
         return view('home', $data);
     }

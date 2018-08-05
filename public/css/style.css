@@ -2220,13 +2220,6 @@ select.form-control.custom-select {
     margin: 0 0 28px;
 }
 
-.admission_testimonial .admissiontesti-img_block {
-    display: inline-block;
-}
-
-.admission_testimonial .admissiontesti-img_block img {
-    border-radius: 50%;
-}
 
 .admission_testimonial .admissiontesti-text_block {
     float: right;
@@ -2497,8 +2490,20 @@ select.form-control.custom-select {
 .tell2 div{font-size:12px; color:#f8e0c4; font-family:"Times New Roman", Times, serif;}
 
 .lod_m{position:absolute; right:10px; top:32px; font-size:12px; color:#f8e0c4}
-.pull-right{font-size:20px;}
+.pull-right{font-size:20px;     float: right;}
 .pull-right a{color:#f8e0c4;}
+
+.instafeed_img {
+           width: 260px;
+           height: 260px;
+           background-size: cover;
+        }
+        
+        .instagram_img_holder {
+           width: 260px;
+           height: 260px;
+           background-size: cover;
+        }
 
 .anons_kurs_block{width:150px; background: rgba(34, 44, 69, 1); border-radius:2px; text-align:center; padding:8px; float:left; margin-right:20px;}
 .clear{clear:both;}
@@ -2540,6 +2545,12 @@ select.form-control.custom-select {
 .fon2_dep_h2 h2 {width:100%; text-align:right;}
 .carousel-caption .btn-default{font-size:14px; padding: 8px 14px;}
 .footer_home{margin-top:0 !important}
+
+.admissiontesti_fon  .admissiontesti-img_block{width:15%}
+.admissiontesti_fon  .admissiontesti-img_block img {width:70px !important; height:70px !important;}
+.admissiontesti_fon .admissiontesti_text{width:80%;}
+.admissiontesti_fon  .admissiontesti-img_block, .admissiontesti_fon .admissiontesti_text{display:inline-table; vertical-align:top;}
+
 
 
 
@@ -5039,7 +5050,7 @@ img {
     margin: 0!important;
 }
 .vc_row {
-    padding: 98px 0;
+    padding: 50px 0;
 }
 .vc_row-has-fill>.vc_column_container>.vc_column-inner {
     padding-top: 0!important;

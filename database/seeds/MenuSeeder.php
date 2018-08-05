@@ -22,6 +22,36 @@ class MenuSeeder extends Seeder
             'title' => 'Главная',
             'url' => '/'
         ]);
+        Menu::create([
+            'parent_id' => $menu_top->id,
+            'title' => 'Обучение',
+            'url' => '/'
+        ]);
+        Menu::create([
+            'parent_id' => $menu_top->id,
+            'title' => 'Дистанционное обучение',
+            'url' => '/'
+        ]);
+        Menu::create([
+            'parent_id' => $menu_top->id,
+            'title' => 'Фотогалерея',
+            'url' => '/'
+        ]);
+        Menu::create([
+            'parent_id' => $menu_top->id,
+            'title' => 'Отзывы / видеоотзывы',
+            'url' => '/'
+        ]);
+        Menu::create([
+            'parent_id' => $menu_top->id,
+            'title' => 'Контакты',
+            'url' => '/'
+        ]);
+        Menu::create([
+            'parent_id' => $menu_top->id,
+            'title' => 'Кадровое агентство',
+            'url' => '/'
+        ]);
 
         $footer1 = Menu::create([
             'place' => 'footer1',
@@ -30,9 +60,27 @@ class MenuSeeder extends Seeder
         ]);
         Menu::create([
             'parent_id' => $footer1->id,
-            'title' => 'Отзывы',
-            'url' => '/feedback'
+            'title' => 'О компании',
+            'url' => '/'
         ]);
+        Menu::create([
+            'parent_id' => $footer1->id,
+            'title' => 'Новости',
+            'url' => '/'
+        ]);
+        Menu::create([
+            'parent_id' => $footer1->id,
+            'title' => 'Контакты',
+            'url' => '/'
+        ]);
+        Menu::create([
+            'parent_id' => $footer1->id,
+            'title' => 'Фотогалерея',
+            'url' => '/'
+        ]);
+
+
+
 
         $footer2 = Menu::create([
             'place' => 'footer2',
@@ -41,8 +89,38 @@ class MenuSeeder extends Seeder
         ]);
         Menu::create([
             'parent_id' => $footer2->id,
-            'title' => 'Новости',
-            'url' => '/news'
+            'title' => 'Программы обучения',
+            'url' => '/'
+        ]);
+        Menu::create([
+            'parent_id' => $footer2->id,
+            'title' => 'Первоначальное обучение',
+            'url' => '/'
+        ]);
+        Menu::create([
+            'parent_id' => $footer2->id,
+            'title' => 'Курсы повышения квалификации',
+            'url' => '/'
+        ]);
+        Menu::create([
+            'parent_id' => $footer2->id,
+            'title' => 'Переподготовка на другие типы ВС',
+            'url' => '/'
+        ]);
+        Menu::create([
+            'parent_id' => $footer2->id,
+            'title' => 'Бизнес-авиация',
+            'url' => '/'
+        ]);
+        Menu::create([
+            'parent_id' => $footer2->id,
+            'title' => 'Иностранные языки',
+            'url' => '/'
+        ]);
+        Menu::create([
+            'parent_id' => $footer2->id,
+            'title' => 'Дистанционное обучение',
+            'url' => '/'
         ]);
     }
 }

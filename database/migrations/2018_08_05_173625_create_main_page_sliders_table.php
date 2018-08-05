@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateMainPageReviewsTable extends Migration
+class CreateMainPageSlidersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,11 @@ class CreateMainPageReviewsTable extends Migration
      */
     public function up()
     {
-        Schema::create('main_page_reviews', function (Blueprint $table) {
+        Schema::create('main_page_sliders', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
             $table->string('image');
-            $table->text('body');
-            $table->integer('order');
+            $table->text('content');
+            $table->integer('order')->default(50);
             $table->timestamps();
         });
     }
@@ -30,6 +29,6 @@ class CreateMainPageReviewsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('main_page_reviews');
+        Schema::dropIfExists('main_page_sliders');
     }
 }

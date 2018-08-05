@@ -17,8 +17,8 @@ $factory->define(App\Models\PhotoAlbum::class, function (Faker $faker) {
 
     return [
         'cover_image' => 'http://bizavnews.ru/images/images_full/Jet-Service_team.jpg',
-        'on_main' => rand(0,1),
+        'on_main' => $faker->biasedNumberBetween(0, 1),
         'description' => $faker->text(100),
-        'name' => $faker->text(10)
+        'title' => $faker->unique()->text(10)
     ];
 });
