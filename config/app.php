@@ -176,6 +176,7 @@ return [
          * SleepingOwl Service Providers...
          */
         SleepingOwl\Admin\Providers\SleepingOwlServiceProvider::class,
+        DaveJamesMiller\Breadcrumbs\ServiceProvider::class,
         Admin\Providers\AdminSectionsServiceProvider::class,
 
         App\Providers\ComposerServiceProvider::class,
@@ -228,6 +229,7 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+        'Breadcrumbs' => DaveJamesMiller\Breadcrumbs\Facade::class,
     ],
 
 ];
