@@ -18,13 +18,14 @@ Route::get('/get', function () {
 //    dispatch(new App\Jobs\Parsers\GetUsers());
 //    dispatch(new App\Jobs\Parsers\GetOrders());
 //    dispatch(new App\Jobs\Export\PutForms());
+    dd(Auth::user());
     return;
 });
 Auth::routes();
 Route::get('/', 'HomeController@index')->name('home');
 
 
-Route::get('/lk', 'LkController@index')->name('lk');
+Route::get('/personal', 'LkController@index')->name('personal');
 
 
 

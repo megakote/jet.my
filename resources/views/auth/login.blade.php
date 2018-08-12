@@ -18,14 +18,14 @@
                 <div class="col-md-12">
 
                     <div class="row form-group text-center">
-                        <div class="col-lg-6 {{ $errors->has('login') ? ' has-error' : '' }}">
-                            <input name="login" class="form-control"
-                                   value="{{ old('login') }}" placeholder="Логин" required
+                        <div class="col-lg-6 {{ $errors->has('email') ? ' has-error' : '' }}">
+                            <input name="email" class="form-control"
+                                   value="{{ old('email') }}" placeholder="Логин" required
                                    autofocus>
 
-                            @if ($errors->has('login'))
+                            @if ($errors->has('email'))
                                 <span class="help-block">
-                                        <strong>{{ $errors->first('login') }}</strong>
+                                        <strong>{{ $errors->first('email') }}</strong>
                                     </span>
                             @endif
                         </div>

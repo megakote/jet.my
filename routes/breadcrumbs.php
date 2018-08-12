@@ -2,19 +2,17 @@
 
 
 Breadcrumbs::register('home', function ($trail) {
-    $trail->push('Home', route('home'));
+    $trail->parent('home');
 });
 
-// Home > About
-Breadcrumbs::register('about', function ($trail) {
+Breadcrumbs::register('personal', function ($trail) {
     $trail->parent('home');
-    $trail->push('About', route('about'));
+    $trail->push('Personal', route('personal'));
 });
 
-// Home > Blog
-Breadcrumbs::register('blog', function ($trail) {
+Breadcrumbs::register('register', function ($trail) {
     $trail->parent('home');
-    $trail->push('Blog', route('blog'));
+    $trail->push('Регистрация', route('register'));
 });
 
 // Home > Blog > [Category]

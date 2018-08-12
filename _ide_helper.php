@@ -1,7 +1,7 @@
 <?php
 /**
  * A helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 5.6.26 on 2018-07-30 00:36:14.
+ * Generated for Laravel 5.6.33 on 2018-08-12 14:35:49.
  *
  * This file should not be included in your code, only analyzed by your IDE!
  *
@@ -3291,6 +3291,98 @@ namespace Illuminate\Support\Facades {
          
     }
 
+    class Crypt {
+        
+        /**
+         * Determine if the given key and cipher combination is valid.
+         *
+         * @param string $key
+         * @param string $cipher
+         * @return bool 
+         * @static 
+         */ 
+        public static function supported($key, $cipher)
+        {
+            return \Illuminate\Encryption\Encrypter::supported($key, $cipher);
+        }
+        
+        /**
+         * Create a new encryption key for the given cipher.
+         *
+         * @param string $cipher
+         * @return string 
+         * @static 
+         */ 
+        public static function generateKey($cipher)
+        {
+            return \Illuminate\Encryption\Encrypter::generateKey($cipher);
+        }
+        
+        /**
+         * Encrypt the given value.
+         *
+         * @param mixed $value
+         * @param bool $serialize
+         * @return string 
+         * @throws \Illuminate\Contracts\Encryption\EncryptException
+         * @static 
+         */ 
+        public static function encrypt($value, $serialize = true)
+        {
+            return \Illuminate\Encryption\Encrypter::encrypt($value, $serialize);
+        }
+        
+        /**
+         * Encrypt a string without serialization.
+         *
+         * @param string $value
+         * @return string 
+         * @static 
+         */ 
+        public static function encryptString($value)
+        {
+            return \Illuminate\Encryption\Encrypter::encryptString($value);
+        }
+        
+        /**
+         * Decrypt the given value.
+         *
+         * @param mixed $payload
+         * @param bool $unserialize
+         * @return mixed 
+         * @throws \Illuminate\Contracts\Encryption\DecryptException
+         * @static 
+         */ 
+        public static function decrypt($payload, $unserialize = true)
+        {
+            return \Illuminate\Encryption\Encrypter::decrypt($payload, $unserialize);
+        }
+        
+        /**
+         * Decrypt the given string without unserialization.
+         *
+         * @param string $payload
+         * @return string 
+         * @static 
+         */ 
+        public static function decryptString($payload)
+        {
+            return \Illuminate\Encryption\Encrypter::decryptString($payload);
+        }
+        
+        /**
+         * Get the encryption key.
+         *
+         * @return string 
+         * @static 
+         */ 
+        public static function getKey()
+        {
+            return \Illuminate\Encryption\Encrypter::getKey();
+        }
+         
+    }
+
     class DB {
         
         /**
@@ -4823,6 +4915,18 @@ namespace Illuminate\Support\Facades {
         }
         
         /**
+         * Remove all of the directories within a given directory.
+         *
+         * @param string $directory
+         * @return bool 
+         * @static 
+         */ 
+        public static function deleteDirectories($directory)
+        {
+            return \Illuminate\Filesystem\Filesystem::deleteDirectories($directory);
+        }
+        
+        /**
          * Empty the specified directory of all files and folders.
          *
          * @param string $directory
@@ -5171,6 +5275,7 @@ namespace Illuminate\Support\Facades {
          *
          * @param string $driver
          * @return mixed 
+         * @throws \InvalidArgumentException
          * @static 
          */ 
         public static function driver($driver = null)
@@ -6104,6 +6209,7 @@ namespace Illuminate\Support\Facades {
          *
          * @param string $driver
          * @return mixed 
+         * @throws \InvalidArgumentException
          * @static 
          */ 
         public static function driver($driver = null)
@@ -6634,7 +6740,7 @@ namespace Illuminate\Support\Facades {
          * Create a new redirect response to a named route.
          *
          * @param string $route
-         * @param array $parameters
+         * @param mixed $parameters
          * @param int $status
          * @param array $headers
          * @return \Illuminate\Http\RedirectResponse 
@@ -6649,7 +6755,7 @@ namespace Illuminate\Support\Facades {
          * Create a new redirect response to a controller action.
          *
          * @param string $action
-         * @param array $parameters
+         * @param mixed $parameters
          * @param int $status
          * @param array $headers
          * @return \Illuminate\Http\RedirectResponse 
@@ -6973,6 +7079,21 @@ namespace Illuminate\Support\Facades {
         public static function replace($input)
         {
             return \Illuminate\Http\Request::replace($input);
+        }
+        
+        /**
+         * This method belongs to Symfony HttpFoundation and is not usually needed when using Laravel.
+         * 
+         * Instead, you may use the "input" method.
+         *
+         * @param string $key
+         * @param mixed $default
+         * @return mixed 
+         * @static 
+         */ 
+        public static function get($key, $default = null)
+        {
+            return \Illuminate\Http\Request::get($key, $default);
         }
         
         /**
@@ -7414,26 +7535,6 @@ namespace Illuminate\Support\Facades {
         {
             //Method inherited from \Symfony\Component\HttpFoundation\Request            
             return \Illuminate\Http\Request::getHttpMethodParameterOverride();
-        }
-        
-        /**
-         * Gets a "parameter" value from any bag.
-         * 
-         * This method is mainly useful for libraries that want to provide some flexibility. If you don't need the
-         * flexibility in controllers, it is better to explicitly get request parameters from the appropriate
-         * public property instead (attributes, query, request).
-         * 
-         * Order of precedence: PATH (routing placeholders or custom attributes), GET, BODY
-         *
-         * @param string $key The key
-         * @param mixed $default The default value if the parameter key does not exist
-         * @return mixed 
-         * @static 
-         */ 
-        public static function get($key, $default = null)
-        {
-            //Method inherited from \Symfony\Component\HttpFoundation\Request            
-            return \Illuminate\Http\Request::get($key, $default);
         }
         
         /**
@@ -9153,6 +9254,20 @@ namespace Illuminate\Support\Facades {
         }
         
         /**
+         * Add a route to the underlying route collection.
+         *
+         * @param array|string $methods
+         * @param string $uri
+         * @param \Closure|array|string|null $action
+         * @return \Illuminate\Routing\Route 
+         * @static 
+         */ 
+        public static function addRoute($methods, $uri, $action)
+        {
+            return \Illuminate\Routing\Router::addRoute($methods, $uri, $action);
+        }
+        
+        /**
          * Return the response returned by the given route.
          *
          * @param string $name
@@ -9978,6 +10093,7 @@ namespace Illuminate\Support\Facades {
          *
          * @param string $driver
          * @return mixed 
+         * @throws \InvalidArgumentException
          * @static 
          */ 
         public static function driver($driver = null)
@@ -11672,6 +11788,7 @@ namespace Illuminate\Support\Facades {
          * @param array $data
          * @param array $mergeData
          * @return \Illuminate\Contracts\View\View 
+         * @throws \InvalidArgumentException
          * @static 
          */ 
         public static function first($views, $data = array(), $mergeData = array())
@@ -12388,6 +12505,178 @@ namespace Illuminate\Support\Facades {
         public static function renderTranslation()
         {
             return \Illuminate\View\Factory::renderTranslation();
+        }
+         
+    }
+ 
+}
+
+namespace DaveJamesMiller\Breadcrumbs { 
+
+    class Facade {
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function register($name, $callback)
+        {
+            return \DaveJamesMiller\Breadcrumbs\Manager::register($name, $callback);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function exists($name = null)
+        {
+            return \DaveJamesMiller\Breadcrumbs\Manager::exists($name);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function generate($name = null)
+        {
+            return \DaveJamesMiller\Breadcrumbs\Manager::generate($name);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function generateArray($name, $params = array())
+        {
+            return \DaveJamesMiller\Breadcrumbs\Manager::generateArray($name, $params);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function generateIfExists($name = null)
+        {
+            return \DaveJamesMiller\Breadcrumbs\Manager::generateIfExists($name);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function generateIfExistsArray($name, $params = array())
+        {
+            return \DaveJamesMiller\Breadcrumbs\Manager::generateIfExistsArray($name, $params);
+        }
+        
+        /**
+         * 
+         *
+         * @deprecated Since 3.0.0
+         * @see generateIfExistsArray
+         * @static 
+         */ 
+        public static function generateArrayIfExists()
+        {
+            return \DaveJamesMiller\Breadcrumbs\Manager::generateArrayIfExists();
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function render($name = null)
+        {
+            return \DaveJamesMiller\Breadcrumbs\Manager::render($name);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function renderArray($name, $params = array())
+        {
+            return \DaveJamesMiller\Breadcrumbs\Manager::renderArray($name, $params);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function renderIfExists($name = null)
+        {
+            return \DaveJamesMiller\Breadcrumbs\Manager::renderIfExists($name);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function renderIfExistsArray($name, $params = array())
+        {
+            return \DaveJamesMiller\Breadcrumbs\Manager::renderIfExistsArray($name, $params);
+        }
+        
+        /**
+         * 
+         *
+         * @deprecated Since 3.0.0
+         * @see renderIfExistsArray
+         * @static 
+         */ 
+        public static function renderArrayIfExists()
+        {
+            return \DaveJamesMiller\Breadcrumbs\Manager::renderArrayIfExists();
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function setCurrentRoute($name)
+        {
+            return \DaveJamesMiller\Breadcrumbs\Manager::setCurrentRoute($name);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function setCurrentRouteArray($name, $params = array())
+        {
+            return \DaveJamesMiller\Breadcrumbs\Manager::setCurrentRouteArray($name, $params);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function clearCurrentRoute()
+        {
+            return \DaveJamesMiller\Breadcrumbs\Manager::clearCurrentRoute();
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function setView($view)
+        {
+            return \DaveJamesMiller\Breadcrumbs\Manager::setView($view);
         }
          
     }
@@ -14815,7 +15104,7 @@ namespace KodiCMS\Assets\Facades {
          * @param bool $value
          * @param callable $callback
          * @param callable $default
-         * @return mixed 
+         * @return static|mixed 
          * @static 
          */ 
         public static function when($value, $callback, $default = null)
@@ -14830,7 +15119,7 @@ namespace KodiCMS\Assets\Facades {
          * @param bool $value
          * @param callable $callback
          * @param callable $default
-         * @return mixed 
+         * @return static|mixed 
          * @static 
          */ 
         public static function unless($value, $callback, $default = null)
@@ -15438,7 +15727,7 @@ namespace KodiCMS\Assets\Facades {
          * Push all of the given items onto the collection.
          *
          * @param \Traversable|array $source
-         * @return $this 
+         * @return static 
          * @static 
          */ 
         public static function concat($source)
@@ -15479,7 +15768,7 @@ namespace KodiCMS\Assets\Facades {
          * Get one or a specified number of items randomly from the collection.
          *
          * @param int|null $number
-         * @return mixed 
+         * @return static|mixed 
          * @throws \InvalidArgumentException
          * @static 
          */ 
@@ -16588,7 +16877,7 @@ namespace SleepingOwl\Admin\Facades {
         /**
          * 
          *
-         * @return \SleepingOwl\Admin\Templates\Breadcrumbs 
+         * @return \Breadcrumbs 
          * @static 
          */ 
         public static function breadcrumbs()
@@ -17803,6 +18092,8 @@ namespace  {
 
     class Cookie extends \Illuminate\Support\Facades\Cookie {}
 
+    class Crypt extends \Illuminate\Support\Facades\Crypt {}
+
     class DB extends \Illuminate\Support\Facades\DB {}
 
     class Eloquent extends \Illuminate\Database\Eloquent\Model {         
@@ -17975,7 +18266,7 @@ namespace  {
              *
              * @param mixed $id
              * @param array $columns
-             * @return \Illuminate\Database\Eloquent\Model|\Illuminate\Database\Eloquent\Collection 
+             * @return \Illuminate\Database\Eloquent\Model|\Illuminate\Database\Eloquent\Collection|static|static[] 
              * @throws \Illuminate\Database\Eloquent\ModelNotFoundException
              * @static 
              */ 
@@ -18126,7 +18417,7 @@ namespace  {
              *
              * @param int $count
              * @param callable $callback
-             * @param string $column
+             * @param string|null $column
              * @param string|null $alias
              * @return bool 
              * @static 
@@ -18399,7 +18690,7 @@ namespace  {
              * @param mixed $value
              * @param callable $callback
              * @param callable $default
-             * @return mixed 
+             * @return mixed|$this 
              * @static 
              */ 
             public static function when($value, $callback, $default = null)
@@ -18425,7 +18716,7 @@ namespace  {
              * @param mixed $value
              * @param callable $callback
              * @param callable $default
-             * @return mixed 
+             * @return mixed|$this 
              * @static 
              */ 
             public static function unless($value, $callback, $default = null)
@@ -20123,6 +20414,8 @@ namespace  {
     class Validator extends \Illuminate\Support\Facades\Validator {}
 
     class View extends \Illuminate\Support\Facades\View {}
+
+    class Breadcrumbs extends \DaveJamesMiller\Breadcrumbs\Facade {}
 
     class Debugbar extends \Barryvdh\Debugbar\Facade {}
 

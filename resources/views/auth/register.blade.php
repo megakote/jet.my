@@ -4,14 +4,7 @@
 
 
     <div class="container align">
-        <div class="row">
-            <div class="col-md-12 hk_marg">
-                <p><a href="/">ГЛАВНАЯ</a> / РЕГИСТРАЦИЯ</p>
-            </div>
-            <div class="col-md-12 my-5" style="text-align:center">
-                <h2>Зарегистрироваться как стюардесса бизнес-авиации</h2>
-            </div>
-        </div>
+        {{ Breadcrumbs::render('register') }}
         <div class="reg1">
             <form method="POST" action="{{ route('register') }}">
                 {{ csrf_field() }}

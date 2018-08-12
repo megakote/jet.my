@@ -20,9 +20,9 @@ class User extends Authenticatable
     ];
 
     const SEX = [
-      0 => 'Не указан',
-      1 => 'Жен',
-      2 => 'Муж'
+        0 => 'Не указан',
+        1 => 'Жен',
+        2 => 'Муж'
     ];
     /**
      * The attributes that are mass assignable.
@@ -30,7 +30,10 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'avatar'
+        'name',
+        'email',
+        'password',
+        'avatar'
     ];
 
     /**
@@ -39,9 +42,9 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+        'password',
+        'remember_token',
     ];
-
 
 
     /**
@@ -65,7 +68,12 @@ class User extends Authenticatable
         return $this::SEX[$this->sex_id];
     }
 
-    public function pay (Integer $days)
+    public function isAdmin()
+    {
+        return $this->role_id > 2 ? true : false;
+    }
+
+    public function pay(Integer $days)
     {
         $this->attributes['password'] = Carbon::now(+$days);
         $this->save();

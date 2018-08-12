@@ -19,7 +19,7 @@ class UserSeeder extends Seeder
             'patronymic' => 'slowdreamsss',
             'tel' => '9996241313',
             'skype' => 'sdasdas',
-            'password' => bcrypt('adminadmin'),
+            'password' => 'adminadmin',
             'role_id' => 4,
             'sex_id' => 2
         ]);

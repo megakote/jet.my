@@ -181,6 +181,8 @@ return [
 
         App\Providers\ComposerServiceProvider::class,
 
+
+
     ],
 
     /*
@@ -230,6 +232,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Breadcrumbs' => DaveJamesMiller\Breadcrumbs\Facade::class,
+        'Debugbar' => Barryvdh\Debugbar\Facade::class,
     ],
 
 ];
