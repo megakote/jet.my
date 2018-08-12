@@ -13,15 +13,11 @@
                                 <p><strong>ID:</strong>{{ $user->id }}</p><h2>{{ $user->name }}</h2>
                                 <img src="https://jet-service.org/cache/W2500901525943352_e42b3f54a6f5440da34af0f5c9f0ea23.jpeg" class="img-fluid" alt="">
                                 <div class="row">
-                                    <div class="col-lg-4">
-                                        <img src="https://jet-service.org/cache/W2500901525943352_e42b3f54a6f5440da34af0f5c9f0ea23.jpeg" class="img-fluid" alt="">
-                                    </div>
-                                    <div class="col-lg-4">
-                                        <img src="https://jet-service.org/cache/W2500901525943352_e42b3f54a6f5440da34af0f5c9f0ea23.jpeg" class="img-fluid" alt="">
-                                    </div>
-                                    <div class="col-lg-4">
-                                        <img src="https://jet-service.org/cache/W2500901525943352_e42b3f54a6f5440da34af0f5c9f0ea23.jpeg" class="img-fluid" alt="">
-                                    </div>
+                                @foreach($user->photos as $photo)
+                                        <div class="col-lg-4">
+                                            <img src="{{ $photo->src }}" class="img-fluid" alt="">
+                                        </div>
+                                @endforeach
                                 </div>
                             </div>
                         </section>

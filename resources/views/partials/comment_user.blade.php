@@ -5,7 +5,7 @@
                 <div class="col-8">
                     <div class="star-rating">
                         <div class="post-ratings col-md-12">
-                            <div class="rate_2" id="rate_comment"></div>
+                            <div id="rate_comment"></div>
                             ( <strong>Ваша оценка</strong>)<br><span class="post-ratings-text"></span>
                         </div>
                     </div>

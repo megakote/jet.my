@@ -18,12 +18,6 @@ $(document).ready(function () {
             currentRating = $(this).attr("data-rate");
             maxRating= 5;
             myRating = rating(el, currentRating, maxRating);
-            $(".rate_2").unbind('mouseover');
-            $(".rate_2").hover(function(e) {
-                e.stopPropagation();
-                e.preventDefault();
-                return false;
-            })
         });
 
     }

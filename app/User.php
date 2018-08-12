@@ -3,7 +3,7 @@
 namespace App;
 
 use App\Models\Review;
-use Auth;
+use App\Models\UserPhoto;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use phpDocumentor\Reflection\Types\Integer;
@@ -89,6 +89,11 @@ class User extends Authenticatable
     public function reviews()
     {
         return $this->hasMany(Review::class,'user_id');
+    }
+
+    public function photos()
+    {
+        return $this->hasMany(UserPhoto::class,'user_id');
     }
 
 
