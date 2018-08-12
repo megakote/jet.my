@@ -15,7 +15,7 @@ return [
     | Or a custom view, e.g. '_partials/breadcrumbs'.
     |
     */
-    'view' => 'breadcrumbs::bootstrap4',
+    'view' => 'partials.breadcrumbs',
     /*
     |--------------------------------------------------------------------------
     | Breadcrumbs File(s)

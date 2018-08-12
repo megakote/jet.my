@@ -12,7 +12,7 @@
 */
 
 
-
+\Debugbar::enable();
 
 Route::get('/get', function () {
 //    dispatch(new App\Jobs\Parsers\GetUsers());

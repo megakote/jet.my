@@ -180,6 +180,7 @@ return [
         Admin\Providers\AdminSectionsServiceProvider::class,
 
         App\Providers\ComposerServiceProvider::class,
+        Barryvdh\Debugbar\ServiceProvider::class,
 
 
 
