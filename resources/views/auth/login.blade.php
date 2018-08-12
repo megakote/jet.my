@@ -3,9 +3,7 @@
 @section('content')
     <div class="container align">
         <div class="row">
-            <div class="col-md-12 hk_marg">
-                <p><a href="/">ГЛАВНАЯ</a> / АВТОРИЗАЦИЯ</p>
-            </div>
+            {!! Breadcrumbs::render('login') !!}
             <div class="col-md-12 my-5 h2_marg" style="text-align:center">
                 <h2>Вход в личный кабинет</h2>
             </div>

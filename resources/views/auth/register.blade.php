@@ -4,7 +4,7 @@
 
 
     <div class="container align">
-        {{ Breadcrumbs::render('register') }}
+        {!! Breadcrumbs::render('register') !!}
         <div class="reg1">
             <form method="POST" action="{{ route('register') }}">
                 {{ csrf_field() }}

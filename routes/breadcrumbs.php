@@ -20,3 +20,8 @@ Breadcrumbs::register('register', function ($trail) {
     $trail->parent('home');
     $trail->push('Регистрация', route('register'));
 });
+
+Breadcrumbs::register('login', function ($trail) {
+    $trail->parent('home');
+    $trail->push('Вход', route('login'));
+});
