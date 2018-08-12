@@ -23,12 +23,12 @@ class CreateUsersTable extends Migration
             $table->string('avatar')->nullable();
             $table->integer('tel')->nullable();
             $table->string('skype')->nullable();
-            $table->date('birth')->nullable(0);
-            $table->string('height')->nullable(0);
-            $table->string('weight')->nullable(0);
-            $table->string('lang_skills')->nullable(0);
-            $table->string('id_cart')->nullable(0);
-            $table->string('visa')->nullable(0);
+            $table->date('birth')->nullable();
+            $table->string('height')->nullable();
+            $table->string('weight')->nullable();
+            $table->string('lang_skills')->nullable();
+            $table->string('id_cart')->nullable();
+            $table->string('visa')->nullable();
 
             $table->integer('role_id')->nullable();
             $table->integer('sex_id')->default(0);
