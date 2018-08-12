@@ -14,12 +14,13 @@ class User extends Authenticatable
     use Notifiable, HasRoles;
 
     const ROLES = [
-        1 => 'Worker',
-        2 => 'Recruiter',
-        3 => 'Admin',
-        4 => 'SuperAdmin',
+        1 => 'Стюардесса бизнес-авиации',
+        2 => 'Стюардесса Freelance',
+        3 => 'Кандидат на обучение',
+        4 => 'Работодатель',
+        5 => 'Admin',
+        6 => 'SuperAdmin',
     ];
-
     const SEX = [
         0 => 'Не указан',
         1 => 'Жен',
@@ -83,7 +84,7 @@ class User extends Authenticatable
 
     public function isAdmin()
     {
-        return $this->role_id > 2 ? true : false;
+        return $this->role_id > 4 ? true : false;
     }
 
     public function reviews()
@@ -106,6 +107,6 @@ class User extends Authenticatable
 
     public function getPayedAttribute()
     {
-        return $this->role_id > 2 ? true : false;
+        return $this->role_id > 4 ? true : false;
     }
 }
