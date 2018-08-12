@@ -16,4 +16,11 @@ class PersonnelController extends Controller
 
         return view('personnel', $data);
     }
+    public function show($id, Request $request)
+    {
+        $data = [];
+        $data['user'] = User::find($id);
+
+        return view('persona', $data);
+    }
 }

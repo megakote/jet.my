@@ -19,6 +19,7 @@ $factory->define(App\Models\Review::class, function (Faker $faker) {
         'name' => $faker->unique()->text(15),
         'position' => $faker->unique()->company(),
         'text' => $faker->text(150),
+        'photo' => '/img/instruction-img.jpg',
         'user_id' =>  $faker->numberBetween(1, 50),
     ];
 });

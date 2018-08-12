@@ -28,5 +28,9 @@ class AuthServiceProvider extends ServiceProvider
         Gate::define('see-data', function ($user) {
             return $user->payed == true;
         });
+
+        Gate::define('comment-users', function ($user) {
+            return $user->payed == true;
+        });
     }
 }

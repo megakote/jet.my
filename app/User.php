@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Models\Review;
 use Auth;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -83,6 +84,11 @@ class User extends Authenticatable
     public function isAdmin()
     {
         return $this->role_id > 2 ? true : false;
+    }
+
+    public function reviews()
+    {
+        return $this->hasMany(Review::class,'user_id');
     }
 
 

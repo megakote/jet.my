@@ -13,6 +13,7 @@
     <link rel='stylesheet' href='{{ asset('/css/style.css') }}' type='text/css' media='all' />
     <link rel="stylesheet" href="{{ asset('/css/assets/owl.carousel.min.css') }}">
     <link rel="stylesheet" href="{{ asset('/css/assets/owl.theme.default.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('/css/rating.css') }}">
 
     <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
 </head>
@@ -168,9 +169,11 @@
 <script type='text/javascript' src='{{ asset('/js/waypoints.min.js') }}'></script>
 <script type='text/javascript' src='{{ asset('/js/counterup.min.js') }}'></script>
 <script type='text/javascript' src='{{ asset('/js/jquery.ajaxchimp.min.js') }}'></script>
+<script type='text/javascript' src='{{ asset('/js/rating.js') }}'></script>
 
 <script type='text/javascript' src='{{ asset('/js/vc-accordion.min.js') }}'></script>
 <script type='text/javascript' src='{{ asset('/js/vc-tabs.min.js') }}'></script>
+<script type='text/javascript' src='{{ asset('/js/common.js') }}'></script>
 
 
 

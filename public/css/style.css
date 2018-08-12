@@ -406,13 +406,13 @@ input[type='submit']:hover {
 }
 
 .carousel-caption {
-    
+
 
 }
 
 @media (min-width: 992px) {
     .carousel-caption {
-       
+
 
     }
 }
@@ -438,7 +438,7 @@ input[type='submit']:hover {
 	background: repeating-linear-gradient(white, white, #c2ab74, #f2e2c3);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  
+
 }
 
 .slider_title p{background: repeating-linear-gradient(white, white, #c2ab74, #f2e2c3);
@@ -2106,9 +2106,9 @@ select.form-control.custom-select {
 
     .course_duration ul li p, .course_duration1 ul li p {
         font-size: 13px;
-		
+
     }
-	
+
 	.btn2 p{font-size:25px !important; }
 
     .course_duration ul li span, .course_duration1 ul li span {
@@ -2498,7 +2498,7 @@ select.form-control.custom-select {
            height: 260px;
            background-size: cover;
         }
-        
+
         .instagram_img_holder {
            width: 260px;
            height: 260px;
@@ -5010,6 +5010,7 @@ img {
     padding: 6px 16px;
 }
 .widget .admission_rating li {
+    height: 43px;
     border-bottom: 1px solid #d1c3a7;
     margin: 0;
 }
