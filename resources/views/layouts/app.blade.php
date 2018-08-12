@@ -47,7 +47,7 @@
             </ul>
         </div>
     </div>
-
+    <header class="site-header"></header>
     @yield('content')
 
     <footer class="site-footer footer_home">

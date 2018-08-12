@@ -17,10 +17,11 @@ $factory->define(App\User::class, function (Faker $faker) {
     static $password;
 
     return [
-        'name' => $faker->name,
+        'name' => $faker->firstNameFemale,
         'email' => $faker->unique()->safeEmail,
-        'surname' => $faker->name,
-        'patronymic' => $faker->name,
+        'birth' => $faker->date($format = 'Y-m-d', $max = '-15070 days'),
+        'surname' => $faker->lastName,
+        'patronymic' => $faker->lastName,
         'tel' => $faker->biasedNumberBetween(1111111111, 99999999999),
         'skype' => str_random(10),
         'password' => $password ?: $password = 'secret',

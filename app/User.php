@@ -68,14 +68,33 @@ class User extends Authenticatable
         return $this::SEX[$this->sex_id];
     }
 
+    public function getFioAttribute()
+    {
+        return $this->attributes['name'] . ' ' .
+               $this->attributes['patronymic'] . ' ' .
+               $this->attributes['surname'];
+    }
+
+    public function getAgeAttribute()
+    {
+        return Carbon::now()->diffInYears($this->asDateTime($this->attributes['birth']));
+    }
+
     public function isAdmin()
     {
         return $this->role_id > 2 ? true : false;
     }
 
+
+
     public function pay(Integer $days)
     {
         $this->attributes['password'] = Carbon::now(+$days);
         $this->save();
+    }
+
+    public function getPayedAttribute()
+    {
+        return $this->role_id > 2 ? true : false;
     }
 }

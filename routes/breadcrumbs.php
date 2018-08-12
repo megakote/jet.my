@@ -2,12 +2,12 @@
 
 
 Breadcrumbs::register('home', function ($trail) {
-    $trail->push('home');
+    $trail->push('Главная', route('home'));
 });
 
-Breadcrumbs::register('personal', function ($trail) {
+Breadcrumbs::register('personnel', function ($trail) {
     $trail->parent('home');
-    $trail->push('Personal', route('personal'));
+    $trail->push('Персонал', route('personnel'));
 });
 
 Breadcrumbs::register('register', function ($trail) {

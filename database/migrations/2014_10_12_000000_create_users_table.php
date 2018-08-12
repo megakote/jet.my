@@ -23,6 +23,13 @@ class CreateUsersTable extends Migration
             $table->string('avatar')->nullable();
             $table->integer('tel')->nullable();
             $table->string('skype')->nullable();
+            $table->date('birth')->nullable(0);
+            $table->string('height')->nullable(0);
+            $table->string('weight')->nullable(0);
+            $table->string('lang_skills')->nullable(0);
+            $table->string('id_cart')->nullable(0);
+            $table->string('visa')->nullable(0);
+
             $table->integer('role_id')->nullable();
             $table->integer('sex_id')->default(0);
             $table->dateTime('payed_to')->default(0);

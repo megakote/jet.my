@@ -23,6 +23,10 @@ class AuthServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        $this->registerPolicies();
+
+        Gate::define('see-data', function ($user) {
+            return $user->payed == true;
+        });
     }
 }
