@@ -36,12 +36,8 @@
                                 <div class="col-md-8 my-5">
                                     <div class="star-rating">
                                         <div class="post-ratings col-md-12">
-                                            <img src="/img/rating_on.png" alt="1 звезда" title="1 звезда" style="cursor: pointer; border: 0px;">
-                                            <img src="/img/rating_on.png" alt="2 звезды" title="2 звезды" style="cursor: pointer; border: 0px;">
-                                            <img src="/img/rating_on.png" alt="3 звезды" title="3 звезды" style="cursor: pointer; border: 0px;">
-                                            <img src="/img/rating_on.png" alt="4 звезды" title="4 звезды" style="cursor: pointer; border: 0px;">
-                                            <img src="/img/rating_half.png" alt="5 звезд" title="5 звезд" style="cursor: pointer; border: 0px;">
-                                            ( <strong>14</strong> голосов)<br><span class="post-ratings-text" ></span>
+                                            <div class="rate_2" id="rate_{{ $user->id }}" data-rate="{{ $user->reviews()->avg('stars') }}"></div>
+                                            ( <strong>{{ $user->reviews()->count() }}</strong> голосов)<br><span class="post-ratings-text"></span>
                                         </div>
                                     </div>
                                     <section class="col-md-12 widget widget_unisco_course_widget my-2">

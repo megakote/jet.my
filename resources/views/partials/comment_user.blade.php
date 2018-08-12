@@ -5,11 +5,7 @@
                 <div class="col-8">
                     <div class="star-rating">
                         <div class="post-ratings col-md-12">
-                            <img src="/img/rating_on.png" alt="1 звезда" title="1 звезда" style="cursor: pointer; border: 0px;">
-                            <img src="/img/rating_on.png" alt="2 звезды" title="2 звезды" style="cursor: pointer; border: 0px;">
-                            <img src="/img/rating_on.png" alt="3 звезды" title="3 звезды" style="cursor: pointer; border: 0px;">
-                            <img src="/img/rating_on.png" alt="4 звезды" title="4 звезды" style="cursor: pointer; border: 0px;">
-                            <img src="/img/rating_half.png" alt="5 звезд" title="5 звезд" style="cursor: pointer; border: 0px;">
+                            <div class="rate_2" id="rate_comment"></div>
                             ( <strong>Ваша оценка</strong>)<br><span class="post-ratings-text"></span>
                         </div>
                     </div>

@@ -169,7 +169,7 @@
 <script type='text/javascript' src='{{ asset('/js/waypoints.min.js') }}'></script>
 <script type='text/javascript' src='{{ asset('/js/counterup.min.js') }}'></script>
 <script type='text/javascript' src='{{ asset('/js/jquery.ajaxchimp.min.js') }}'></script>
-<script type='text/javascript' src='{{ asset('/js/rating.js') }}'></script>
+<script type='text/javascript' src='{{ asset('/js/rating.min.js') }}'></script>
 
 <script type='text/javascript' src='{{ asset('/js/vc-accordion.min.js') }}'></script>
 <script type='text/javascript' src='{{ asset('/js/vc-tabs.min.js') }}'></script>

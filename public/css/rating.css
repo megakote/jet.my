@@ -1,0 +1,16 @@
+
+.c-rating__item {
+    display: inline-block;
+    vertical-align: top;
+    cursor: pointer;
+    width: 23px;
+    height: 23px;
+    margin: 2px;
+    background-image: url(/img/stars.png);
+    background-repeat: no-repeat;
+    background-position: -25px 0;
+}
+
+.c-rating__item.is-active {
+    background-position: -1px 0;
+}
