@@ -16,7 +16,7 @@
                             </div>
                             <div class="col-lg-6">
                                 <select class="form-control custom-select reg" id="reg"
-                                        name="admission_course">
+                                        name="role_id">
                                     <option value="1" selected>Стюардесса бизнес-авиации
                                     </option>
                                     <option value="2">Стюардесса Freelance</option>
@@ -38,10 +38,8 @@
                         </div>
                         <div class="row form-group">
                             <div class="col-lg-12">
-                                <input type="hidden" name="name"
-                                       value="Стюардесса бизнес-авиации">
-                                <input type="text" name="login" class="form-control"
-                                       value="" placeholder="Логин" required>
+                                <input type="text" name="email" class="form-control"
+                                       value="" placeholder="Логин (email)" required>
                             </div>
                         </div>
                         <div class="row form-group">
@@ -72,17 +70,13 @@
                         </div>
                         <div class="row form-group">
                             <div class="col-lg-6">
-                                <input type="email" name="email" class="form-control"
-                                       value="" placeholder="E-mail" required>
-                            </div>
-                            <div class="col-lg-6">
-                                <input name="tel" class="form-control" value=""
+                                <input name="tel" class="form-control" type="tel" value=""
                                        placeholder="Телефон" required>
                             </div>
                         </div>
                         <div class="row form-group">
                             <div class="col-lg-6">
-                                <input name="skype" class="form-control" value=""
+                                <input type="text" name="skype" class="form-control" value=""
                                        placeholder="Skype">
                             </div>
                             <div class="col-lg-5">
@@ -92,22 +86,22 @@
                         </div>
                         <div class="row form-group">
                             <div class="col-lg-4">
-                                <input name="year_birth" class="form-control" value=""
-                                       placeholder="Год рождения">
+                                <input name="birth" class="form-control" type="date" value=""
+                                       placeholder="Дата рождения">
                             </div>
                             <div class="col-lg-4">
-                                <input name="height" class="form-control" value=""
+                                <input name="height" class="form-control" type="text" value=""
                                        placeholder="Рост, см">
                             </div>
                             <div class="col-lg-4">
-                                <input name="weight" class="form-control" value=""
+                                <input name="weight" class="form-control" type="text" value=""
                                        placeholder="Вес, кг">
                             </div>
                         </div>
                         <div class="row form-group">
                             <div class="col-lg-10">
                                 <label>Фотография (JPEG, PNG, GIF) <input type="file"
-                                                                          name="photo"></label>
+                                                                          name="avatar"></label>
                             </div>
                         </div>
                         <div class="row form-group">

@@ -48,9 +48,7 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => 'required|string|max:255',
-            'login' => 'required|string|max:255|unique:users',
-            'password' => 'required|string|min:6|confirmed',
+            'name' => 'required|string|max:255'
         ]);
     }
 
@@ -62,10 +60,27 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
-            'name' => $data['name'],
-            'login' => $data['login'],
-            'password' => bcrypt($data['password']),
-        ]);
+        $user_data = [
+              'role_id' => ($data["role_id"] < 5) ? $data["role_id"] : 1,
+              'email' => $data["email"] ?? null,
+              'password' => $data["password"] ?? null,
+              'surname' => $data["surname"] ?? null,
+              'name' => $data["name"] ?? null,
+              'patronymic' => $data["patronymic"] ?? null,
+              'tel' => $data["tel"] ?? null,
+              'skype' => $data["skype"] ?? null,
+              'birth' => $data["birth"] ?? null,
+              'height' => $data["height"] ?? null,
+              'weight' => $data["weight"] ?? null,
+              'avatar' => $data["avatar"] ?? null,
+              'education' => $data["education"] ?? null,
+              'experience' => $data["experience"] ?? null,
+              'lang_skills' => $data["lang_skills"] ?? null,
+              'city' => $data["city"] ?? null,
+              'id_cart' => $data["id_cart"] ?? null,
+              'visa' => $data["visa"] ?? null,
+              'vs' => $data["vs"] ?? null,
+        ];
+        return User::create($user_data);
     }
 }
