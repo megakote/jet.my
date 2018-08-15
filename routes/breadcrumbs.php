@@ -25,3 +25,8 @@ Breadcrumbs::register('login', function ($trail) {
     $trail->parent('home');
     $trail->push('Вход', route('login'));
 });
+
+Breadcrumbs::register('lk', function ($trail) {
+    $trail->parent('home');
+    $trail->push('Личный кабинет', route('lk'));
+});

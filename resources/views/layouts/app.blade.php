@@ -36,7 +36,11 @@
                 </div>
                 <!--Top Right-->
                 <div class="top-right pull-right">
-                    <a href="">Вход</a> / <a href="">Регистрация</a>
+                    @auth
+                        <a href="{{ route('lk') }}">Личный кабинет</a>
+                    @else
+                        <a href="{{ route('login') }}">Вход</a> / <a href="{{ route('register') }}">Регистрация</a>
+                    @endauth
                 </div>
                 <div class="lod_m">Лицензия Министерства Образования N 034186</div>
                 <!--Top Right-->

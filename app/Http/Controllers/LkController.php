@@ -9,12 +9,6 @@ use Auth;
 class LkController extends Controller
 {
 
-    public function __construct()
-    {
-
-//        parent::__construct();
-
-    }
 
     public function index(Request $request)
     {
@@ -23,8 +17,8 @@ class LkController extends Controller
         }
 
         $data = [];
+        $data['user'] = Auth::user();
 
-
-        return view('personal', $data);
+        return view('lk', $data);
     }
 }
