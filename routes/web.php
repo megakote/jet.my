@@ -24,6 +24,7 @@ Route::get('/get', function () {
 Auth::routes();
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/lk', 'LkController@index')->name('lk');
+Route::post('/lk/edit', 'LkController@edit')->name('lk.edit');
 
 
 Route::get('/personnel/', 'PersonnelController@index')->name('personnel');

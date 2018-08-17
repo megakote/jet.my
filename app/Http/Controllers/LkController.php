@@ -21,4 +21,15 @@ class LkController extends Controller
 
         return view('lk', $data);
     }
+
+    public function edit(Request $request)
+    {
+        if (!Auth::user()) {
+            return redirect()->route('home');
+        }
+
+        Auth::user()->fill($request->all());
+
+        return response()->redirectToRoute('lk');
+    }
 }

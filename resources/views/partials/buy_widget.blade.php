@@ -5,9 +5,8 @@
         </div>
     </div>
 </div>
-<form action="" method="post">
-    <select class="form-control custom-select" name="admission_course"
-            data-cip-id="cIPJQ342845639">
+<form action="{{ route('orders.put') }}" method="post">
+    <select class="form-control custom-select" name="admission_course">
         <option value="">На 7 дней</option>
         <option value="">На 12 дней</option>
         <option value="">На 1 месяц</option>

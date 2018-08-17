@@ -33,17 +33,17 @@
                                         <div class="wpb_text_column wpb_content_element ">
                                             <div class="wpb_wrapper">
                                                 <div class="col-md-12 my-5">
-                                                    <h4>Имя (Логин): Irina_jet</h4>
+                                                    <h4>Почта (Логин): {{ $user->email }}</h4>
                                                 </div>
-                                                <form action="" method="post">
+                                                <form action="{{ route('lk.edit') }}" method="post">
                                                     <div class="row col-md-12" style="margin:0 auto;">
                                                         <div class="col-md-12 mx">
                                                             <div class="row form-group text-left">
                                                                 <div class="col-lg-1">
-                                                                    <img src="/img/instruction-img.jpg" alt="Testimonial">
+                                                                    <img src="{{ $user->avatar }}" alt="Testimonial">
                                                                 </div>
                                                                 <div class="col-lg-8">
-                                                                    <label>Сменить аватар <input type="file" name=""></label>
+                                                                    <label>Сменить аватар <input type="file" name="avatar"></label>
                                                                 </div>
                                                             </div>
                                                             <div class="row form-group text-left">
@@ -51,7 +51,7 @@
                                                                     <label>Пол:</label>
                                                                 </div>
                                                                 <div class="col-lg-8">
-                                                                    <input name="admission_first_name" class="form-control" value="" placeholder="Пароль">
+                                                                    <input name="password" class="form-control" value="password" placeholder="Пароль">
                                                                 </div>
                                                             </div>
                                                             <div class="row form-group text-left">
@@ -59,13 +59,13 @@
                                                                     <label>Сменить пароль:</label>
                                                                 </div>
                                                                 <div class="col-lg-2">
-                                                                    <input name="admission_first_name" class="form-control" value="" placeholder="Старый пароль">
+                                                                    <input name="password_all" class="form-control" value="" placeholder="Старый пароль">
                                                                 </div>
                                                                 <div class="col-lg-2">
-                                                                    <input name="admission_first_name" class="form-control" value="" placeholder="Новый пароль">
+                                                                    <input name="password_new" class="form-control" value="" placeholder="Новый пароль">
                                                                 </div>
                                                                 <div class="col-lg-2">
-                                                                    <input name="admission_first_name" class="form-control" value="" placeholder="Повторите пароль">
+                                                                    <input name="password_new2" class="form-control" value="" placeholder="Повторите пароль">
                                                                 </div>
                                                             </div>
                                                             <div class="row form-group text-left">
@@ -73,7 +73,7 @@
                                                                     <label>Электронная почта:</label>
                                                                 </div>
                                                                 <div class="col-lg-8">
-                                                                    <input name="admission_first_name" class="form-control" value="director@jet-service.org">
+                                                                    <input name="email" class="form-control" value="{{ $user->email }}">
                                                                 </div>
                                                             </div>
                                                             <div class="row form-group text-left">
@@ -81,13 +81,13 @@
                                                                     <label>ФИО:</label>
                                                                 </div>
                                                                 <div class="col-lg-2">
-                                                                    <input name="admission_first_name" class="form-control" value="Юшина">
+                                                                    <input name="surname" class="form-control" value="{{ $user->surname }}">
                                                                 </div>
                                                                 <div class="col-lg-2">
-                                                                    <input name="admission_first_name" class="form-control" value="Ирина">
+                                                                    <input name="name" class="form-control" value="{{ $user->name }}">
                                                                 </div>
                                                                 <div class="col-lg-2">
-                                                                    <input name="admission_first_name" class="form-control" value="Александровна">
+                                                                    <input name="patronymic" class="form-control" value="{{ $user->patronymic }}">
                                                                 </div>
                                                             </div>
                                                             <div class="row form-group text-left">
@@ -95,7 +95,7 @@
                                                                     <label>Телефон:</label>
                                                                 </div>
                                                                 <div class="col-lg-8">
-                                                                    <input name="admission_first_name" class="form-control" value="89037987358">
+                                                                    <input name="tel" class="form-control" value="{{ $user->tel }}">
                                                                 </div>
                                                             </div>
                                                             <div class="row form-group text-left">
@@ -103,7 +103,7 @@
                                                                     <label>SkyPe:</label>
                                                                 </div>
                                                                 <div class="col-lg-8">
-                                                                    <input name="admission_first_name" class="form-control" value="">
+                                                                    <input name="skype" class="form-control" value="{{ $user->skype }}">
                                                                 </div>
                                                             </div>
                                                             <div class="row form-group text-left">
@@ -111,7 +111,7 @@
                                                                     <label><strong>Зарегистрирован:</strong></label>
                                                                 </div>
                                                                 <div class="col-lg-8">
-                                                                    <label>30 сентября 2014 13:54:50</label>
+                                                                    <label>{{ $user->created_at }}</label>
                                                                 </div>
                                                             </div>
                                                             <div class="row form-group text-left">
@@ -119,7 +119,7 @@
                                                                     <label><strong>Последние изменения:</strong></label>
                                                                 </div>
                                                                 <div class="col-lg-8">
-                                                                    <label>9 июня 2018 19:54:41</label>
+                                                                    <label>{{ $user->updated_at }}</label>payed_to
                                                                 </div>
                                                             </div>
                                                             <div class="row form-group text-left">
@@ -127,11 +127,11 @@
                                                                     <label><strong>Срок действия аккаунта:</strong></label>
                                                                 </div>
                                                                 <div class="col-lg-8">
-                                                                    <label>Без ограничений</label>
+                                                                    <label>{{ $user->payed_to }}</label>
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-12 my-1 text-left">
-                                                                <button class="btn btn-default btn-courses" name="admission_submit">Сохранить</button>
+                                                                <button class="btn btn-default btn-courses" type="submit">Сохранить</button>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -234,7 +234,7 @@
                                         </div>
                                     </div>
                                 @else
-                                    <div class="vc_tta-panel" id="a2" data-vc-content=".vc_tta-panel-body">
+                                    <div class="vc_tta-panel" id="a6" data-vc-content=".vc_tta-panel-body">
                                         <div class="vc_tta-panel-heading">
                                             <h4 class="vc_tta-panel-title">
                                                 <a href="#a2" data-vc-accordion="" data-vc-container=".vc_tta-container"><span class="vc_tta-title-text">Оплата</span></a>
