@@ -8,7 +8,9 @@
             <div class="row">
                 <div class="col-md-12 row">
                    <h2>{{ $title }}</h2>
-                    {!! $body !!}
+                    <div>
+                        {!! $body !!}
+                    </div>
                 </div>
             </div>
         </div>
