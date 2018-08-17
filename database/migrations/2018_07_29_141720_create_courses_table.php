@@ -19,7 +19,7 @@ class CreateCoursesTable extends Migration
             $table->string('name');
             $table->string('duration');
             $table->string('slug');
-            $table->date('date')->default(0);
+            $table->date('date')->nullable();
             $table->text('content');
             $table->text('description');
             $table->integer('price');
