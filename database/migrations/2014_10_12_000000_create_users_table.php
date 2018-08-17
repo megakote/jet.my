@@ -31,7 +31,6 @@ class CreateUsersTable extends Migration
             $table->string('visa')->nullable();
             $table->boolean('in_base')->default(false);
             $table->boolean('skype_conf')->default(false);
-            $table->string('visa')->nullable();
             $table->string('education')->nullable();
             $table->string('experience')->nullable();
             $table->string('city')->nullable();
