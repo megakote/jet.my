@@ -6,7 +6,7 @@
         <div  class="container">
             {!! Breadcrumbs::render('page', $title)  !!}
             <div class="row">
-                <div class="col-md-12 row">
+                <div class="col-md-12">
                    <h2>{{ $title }}</h2>
                     <br>
                     <div>
