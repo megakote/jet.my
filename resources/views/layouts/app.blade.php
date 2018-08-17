@@ -52,7 +52,9 @@
             </ul>
         </div>
     </div>
-    <header class="site-header"></header>
+    @if(\Route::currentRouteName() != 'home')
+        <header class="site-header"></header>
+    @endif
     @yield('content')
 
     <footer class="site-footer footer_home">
@@ -94,7 +96,7 @@
                 <div class="col-md-4 widget widget_display_latest_tweets">
                     <h3 class="widget-title">Обучения</h3>
                     <ul class="menu">
-                        @foreach($menu_footer1 as $item)
+                        @foreach($menu_footer2 as $item)
                             <li class="menu-item menu-item-type-post_type menu-item-object-page">
                                 <a href="{{ $item->url }}" {{ (request()->path() == $item->url) ? 'class="active"' : '' }}>{{ $item->title }}</a>
                             </li>
