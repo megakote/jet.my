@@ -37,7 +37,7 @@ class CreateUsersTable extends Migration
             $table->string('vs')->nullable();
             $table->integer('role_id')->nullable();
             $table->integer('sex_id')->default(0);
-            $table->dateTime('payed_to')->default(0);
+            $table->dateTime('payed_to')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
