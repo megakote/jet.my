@@ -27,9 +27,9 @@ class AdminAuthenticate
             }
         }
 
-        if (! $auth->user()->isAdmin()) {
-            return response('Access denied.', 401);
-        }
+//        if (! $auth->user()->isAdmin()) {
+//            return response('Access denied.', 401);
+//        }
 
         return $next($request);
     }
