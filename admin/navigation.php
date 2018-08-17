@@ -53,7 +53,7 @@ $navigation->setFromArray([
         'title' => 'Дистанциионные обучения',
         'icon'  => 'fa fa-exclamation-circle',
         'url'   => '#',
-        'id'    => 'courses',
+        'id'    => 'dist_courses',
     ],
 
     [
