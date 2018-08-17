@@ -30,3 +30,8 @@ Breadcrumbs::register('lk', function ($trail) {
     $trail->parent('home');
     $trail->push('Личный кабинет', route('lk'));
 });
+
+Breadcrumbs::register('page', function ($trail, $title) {
+    $trail->parent('home');
+    $trail->push($title);
+});
