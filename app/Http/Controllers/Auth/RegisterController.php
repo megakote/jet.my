@@ -80,6 +80,7 @@ class RegisterController extends Controller
               'id_cart' => $data["id_cart"] ?? null,
               'visa' => $data["visa"] ?? null,
               'vs' => $data["vs"] ?? null,
+              'company' => $data["company"] ?? null,
         ];
         return User::create($user_data);
     }
