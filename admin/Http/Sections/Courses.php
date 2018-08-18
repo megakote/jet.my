@@ -60,7 +60,7 @@ class Courses extends Section implements Initializable
                 AdminColumn::text('id', '#')->setWidth('30px'),
                 AdminColumn::text('name', 'Название'),
                 AdminColumn::text('duration', 'Продолжительность'),
-                AdminColumn::datetime('date', 'Дата')
+                AdminColumn::datetime('date', 'Дата')->setFormat('d.m.Y')
             );
 
         return $display;
