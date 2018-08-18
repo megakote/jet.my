@@ -23,6 +23,7 @@ class DatabaseSeeder extends Seeder
         factory(App\Models\PhotoAlbum::class, 30)->create();
         factory(App\Models\MainPageSlider::class, 7)->create();
         factory(App\Models\Course::class, 30)->create();
+        factory(App\Models\CourseCategory::class, 3)->create();
         factory(App\Models\Review::class, 150)->create();
     }
 }
