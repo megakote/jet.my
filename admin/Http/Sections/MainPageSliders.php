@@ -37,7 +37,7 @@ class MainPageSliders extends Section implements Initializable
      */
     public function initialize()
     {
-        app()->booted(function() {
+        app()->booted(function () {
             $page = \AdminNavigation::getPages()->findById('main_page');
             $page->setPages(function (PageInterface $subpage) {
                 $subpage->addPage(new Page(MainPageSlider::class))
@@ -60,12 +60,12 @@ class MainPageSliders extends Section implements Initializable
     {
         $display = AdminDisplay::datatables();
         $display->setHtmlAttribute('class', 'table-primary')
-        ->setColumns(
-            AdminColumn::text('id', '#')->setWidth('30px'),
-            AdminColumn::image('image', 'Изображение'),
-            AdminColumn::text('content', 'Контент'),
-            AdminColumn::order()->setLabel('Порядок')
-        );
+            ->setColumns(
+                AdminColumn::text('id', '#')->setWidth('30px'),
+                AdminColumn::image('image', 'Изображение'),
+                AdminColumn::text('content', 'Контент'),
+                AdminColumn::order()->setLabel('Порядок')
+            );
 
         return $display;
 

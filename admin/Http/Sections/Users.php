@@ -40,7 +40,7 @@ class Users extends Section implements Initializable
     public function initialize()
     {
 
-        $this->addToNavigation($priority = 500, function() {
+        $this->addToNavigation($priority = 500, function () {
             return User::count();
         })->setIcon('fa fa-building');
         $this->title = 'Пользователи';
@@ -54,13 +54,13 @@ class Users extends Section implements Initializable
     {
         $display = AdminDisplay::datatables();
         $display->setHtmlAttribute('class', 'table-primary')
-        ->setColumns(
-            AdminColumn::text('id', '#')->setWidth('30px'),
-            AdminColumn::text('name', 'Имя'),
-            AdminColumn::text('email', 'Почта'),
-            AdminColumn::text('sex', 'Пол'),
-            AdminColumn::text('role', 'Роль')
-        );
+            ->setColumns(
+                AdminColumn::text('id', '#')->setWidth('30px'),
+                AdminColumn::text('name', 'Имя'),
+                AdminColumn::text('email', 'Почта'),
+                AdminColumn::text('sex', 'Пол'),
+                AdminColumn::text('role', 'Роль')
+            );
         return $display;
 
     }
@@ -76,7 +76,8 @@ class Users extends Section implements Initializable
         $display->addBody([
             AdminFormElement::text('name', 'Имя'),
             AdminFormElement::text('email', 'Почта')->required(),
-            AdminFormElement::select('role_id', 'Роль')->setOptions(User::ROLES)->required()
+            AdminFormElement::select('role_id',
+                'Роль')->setOptions(User::ROLES)->required()
         ]);
 
         return $display;

@@ -9,7 +9,8 @@ use SleepingOwl\Admin\Contracts\Template\MetaInterface;
 use SleepingOwl\Admin\Contracts\Widgets\WidgetsRegistryInterface;
 use SleepingOwl\Admin\Providers\AdminSectionsServiceProvider as ServiceProvider;
 
-class AdminSectionsServiceProvider extends ServiceProvider {
+class AdminSectionsServiceProvider extends ServiceProvider
+{
     /**
      * @var array
      */
@@ -21,10 +22,10 @@ class AdminSectionsServiceProvider extends ServiceProvider {
      * @var array
      */
     protected $sections = [
-       'App\Models\Page' => 'Admin\Http\Sections\Pages',
-       'App\Models\Menu' => 'Admin\Http\Sections\Menus',
-       'App\Models\MainPageSlider' => 'Admin\Http\Sections\MainPageSliders',
-       'App\User' => 'Admin\Http\Sections\Users',
+        'App\Models\Page' => 'Admin\Http\Sections\Pages',
+        'App\Models\Menu' => 'Admin\Http\Sections\Menus',
+        'App\Models\MainPageSlider' => 'Admin\Http\Sections\MainPageSliders',
+        'App\User' => 'Admin\Http\Sections\Users',
     ];
 
     /**
@@ -32,10 +33,12 @@ class AdminSectionsServiceProvider extends ServiceProvider {
      *
      * @return void
      */
-    public function boot(\SleepingOwl\Admin\Admin $admin) {
+    public function boot(\SleepingOwl\Admin\Admin $admin)
+    {
 
-        if (\App::runningInConsole())
+        if (\App::runningInConsole()) {
             return;
+        }
 
         $this->loadViewsFrom(base_path("admin/resources/views"), 'admin');
         $this->registerPolicies('Admin\\Policies\\');
@@ -64,14 +67,16 @@ class AdminSectionsServiceProvider extends ServiceProvider {
     /**
      * @param NavigationInterface $navigation
      */
-    public function registerNavigation(NavigationInterface $navigation) {
+    public function registerNavigation(NavigationInterface $navigation)
+    {
         require base_path('admin/navigation.php');
     }
 
     /**
      * @param WidgetsRegistryInterface $widgetsRegistry
      */
-    public function registerViews(WidgetsRegistryInterface $widgetsRegistry) {
+    public function registerViews(WidgetsRegistryInterface $widgetsRegistry)
+    {
         foreach ($this->widgets as $widget) {
             $widgetsRegistry->registerWidget($widget);
         }
@@ -80,9 +85,10 @@ class AdminSectionsServiceProvider extends ServiceProvider {
     /**
      * @param Router $router
      */
-    public function registerRoutes(Router $router) {
+    public function registerRoutes(Router $router)
+    {
         $router->group([
-            'prefix'     => config('sleeping_owl.url_prefix'),
+            'prefix' => config('sleeping_owl.url_prefix'),
             'middleware' => config('sleeping_owl.middleware')
         ], function ($router) {
             require base_path('admin/routes.php');
@@ -92,7 +98,8 @@ class AdminSectionsServiceProvider extends ServiceProvider {
     /**
      * @param MetaInterface $meta
      */
-    public function registerMediaPackages(MetaInterface $meta) {
+    public function registerMediaPackages(MetaInterface $meta)
+    {
         $packages = $meta->assets()->packageManager();
     }
 

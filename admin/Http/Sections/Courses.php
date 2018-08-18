@@ -46,7 +46,7 @@ class Courses extends Section implements Initializable
 //            });
 //        });
 
-        $this->addToNavigation($priority = 500, function() {
+        $this->addToNavigation($priority = 500, function () {
             return Course::count();
         })->setIcon('fa fa-building');
         $this->title = 'Курсы';
@@ -60,14 +60,14 @@ class Courses extends Section implements Initializable
     {
         $display = AdminDisplay::datatables();
         $display->setHtmlAttribute('class', 'table-primary')
-        ->setColumns(
-            AdminColumn::text('id', '#')->setWidth('30px'),
-            AdminColumn::custom('type', function ($model){
-                return $this->model::TYPE[$model->type];
-            }),
-            AdminColumn::text('name', 'Название'),
-            AdminColumn::date('date', 'Дата')
-        );
+            ->setColumns(
+                AdminColumn::text('id', '#')->setWidth('30px'),
+                AdminColumn::custom('type', function ($model) {
+                    return $this->model::TYPE[$model->type];
+                }),
+                AdminColumn::text('name', 'Название'),
+                AdminColumn::date('date', 'Дата')
+            );
 
         return $display;
 

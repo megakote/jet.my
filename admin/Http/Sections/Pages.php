@@ -46,7 +46,7 @@ class Pages extends Section implements Initializable
 //            });
 //        });
 
-        $this->addToNavigation($priority = 500, function() {
+        $this->addToNavigation($priority = 500, function () {
             return PageModel::count();
         })->setIcon('fa fa-building');
         $this->title = 'Страницы';
@@ -60,12 +60,12 @@ class Pages extends Section implements Initializable
     {
         $display = AdminDisplay::datatables();
         $display->setHtmlAttribute('class', 'table-primary')
-        ->setColumns(
-            AdminColumn::text('id', '#')->setWidth('30px'),
-            AdminColumn::text('slug', 'Адрес'),
-            AdminColumn::link('title', 'Заголовок'),
-            AdminColumn::text('description', 'Описание')
-        );
+            ->setColumns(
+                AdminColumn::text('id', '#')->setWidth('30px'),
+                AdminColumn::text('slug', 'Адрес'),
+                AdminColumn::link('title', 'Заголовок'),
+                AdminColumn::text('description', 'Описание')
+            );
 
         return $display;
 

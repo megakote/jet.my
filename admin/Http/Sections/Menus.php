@@ -49,7 +49,9 @@ class Menus extends Section implements Initializable
             ->setValue(function ($instanse) {
                 $model = $instanse;
 
-                $link = new ControlLink(function (\Illuminate\Database\Eloquent\Model $model) {
+                $link = new ControlLink(function (
+                    \Illuminate\Database\Eloquent\Model $model
+                ) {
                     return url()->current() . '/create?parent_id=' . $model->getKey(); // Генерация ссылки
                 }, '+', 50);
                 $v = $link->setModel($instanse)->render();
@@ -80,7 +82,7 @@ class Menus extends Section implements Initializable
             ->addBody([
                 AdminFormElement::text('title', 'Пункт меню')->required(),
                 AdminFormElement::text('url', 'Url')
-            ->setHelpText('Если указывается локалная ссылка, то ее НУЖНО начинать со знака "/", пример "/page/vakansii". Сыылки на внешний сайт всегда начинаются с "http://".'),
+                    ->setHelpText('Если указывается локалная ссылка, то ее НУЖНО начинать со знака "/", пример "/page/vakansii". Сыылки на внешний сайт всегда начинаются с "http://".'),
                 AdminFormElement::checkbox('active', 'Активен')->setDefaultValue(true),
                 AdminFormElement::select('place', 'Расположение')
                     ->setOptions(Menu::PLACE)
@@ -98,12 +100,13 @@ class Menus extends Section implements Initializable
 
         return AdminForm::panel()
             ->addBody([
-                ($parent_id) ? AdminFormElement::select('parent_id', 'Родитель', Menu::class)->setDefaultValue($parent_id) : '',
+                ($parent_id) ? AdminFormElement::select('parent_id', 'Родитель',
+                    Menu::class)->setDefaultValue($parent_id) : '',
                 AdminFormElement::text('title', 'Пункт меню')->required(),
                 AdminFormElement::text('url', 'Url')
                     ->setHelpText('Если указывается локалная ссылка, то ее НУЖНО начинать со знака "/", пример "/page/vakansii". Сыылки на внешний сайт всегда начинаются с "http://".'),
                 AdminFormElement::checkbox('active', 'Активен')->setDefaultValue(true),
-                (! $parent_id) ? AdminFormElement::select('place', 'Расположение')
+                (!$parent_id) ? AdminFormElement::select('place', 'Расположение')
                     ->setOptions(Menu::PLACE)
                     ->setHelpText('Необязательное поле. Только для корневых (главных) элементов меню.') : '',
             ]);
