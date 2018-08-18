@@ -11,11 +11,12 @@ class PersonnelController extends Controller
     public function index(Request $request)
     {
         $data = [];
-        $data['users'] = User::paginate(15);
-        $data['all'] = User::count();
+        $data['users'] = User::where('published', true)->paginate(15);
+        $data['all'] = User::where('published', true)->count();
 
         return view('personnel', $data);
     }
+
     public function show($id, Request $request)
     {
         $data = [];

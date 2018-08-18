@@ -19,7 +19,7 @@ class SearchController extends Controller
             $articles = Article::search($query)->get();
             $all = $news->merge($articles);
 
-            if ($all->count()){
+            if ($all->count()) {
                 $data['news'] = paginate($all)->appends($request->except('page'));
                 return view('news', $data);
             }
