@@ -73,8 +73,8 @@ class User extends Authenticatable
     public function getFioAttribute()
     {
         return $this->attributes['name'] . ' ' .
-               $this->attributes['patronymic'] . ' ' .
-               $this->attributes['surname'];
+            $this->attributes['patronymic'] . ' ' .
+            $this->attributes['surname'];
     }
 
     public function getAgeAttribute()
@@ -89,14 +89,13 @@ class User extends Authenticatable
 
     public function reviews()
     {
-        return $this->hasMany(Review::class,'user_id');
+        return $this->hasMany(Review::class, 'user_id');
     }
 
     public function photos()
     {
-        return $this->hasMany(UserPhoto::class,'user_id');
+        return $this->hasMany(UserPhoto::class, 'user_id');
     }
-
 
 
     public function pay(Integer $days)

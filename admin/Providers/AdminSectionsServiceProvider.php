@@ -23,6 +23,7 @@ class AdminSectionsServiceProvider extends ServiceProvider {
     protected $sections = [
        'App\Models\Page' => 'Admin\Http\Sections\Pages',
        'App\Models\Menu' => 'Admin\Http\Sections\Menus',
+       'App\Models\MainPageSlider' => 'Admin\Http\Sections\MainPageSliders',
        'App\User' => 'Admin\Http\Sections\Users',
     ];
 
