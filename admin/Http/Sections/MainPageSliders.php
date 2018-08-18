@@ -42,7 +42,7 @@ class MainPageSliders extends Section implements Initializable
             $page->setPages(function (PageInterface $subpage) {
                 $subpage->addPage(new Page(MainPageSlider::class))
                     ->setIcon('fa fa-building')
-                    ->setTitle('Города');
+                    ->setTitle('Слайдеры на главной');
             });
         });
 
@@ -78,7 +78,6 @@ class MainPageSliders extends Section implements Initializable
      */
     public function onEdit($id)
     {
-        return false;
         $display = AdminForm::panel();
         $display->addBody([
             AdminFormElement::image('image', 'Изображение')->required(),

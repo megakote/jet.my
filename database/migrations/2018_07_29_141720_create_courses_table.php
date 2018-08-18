@@ -23,6 +23,7 @@ class CreateCoursesTable extends Migration
             $table->text('content');
             $table->text('description');
             $table->integer('price');
+            $table->boolean('on_main')->default(false);
             $table->timestamps();
         });
     }
