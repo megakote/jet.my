@@ -43,10 +43,16 @@ $navigation->setFromArray([
     ],
 
     [
-        'title' => 'Обучения',
+        'title' => 'Курсы',
         'icon'  => 'fa fa-exclamation-circle',
         'url'   => '#',
         'id'    => 'courses',
+    ],
+    [
+        'title' => 'Обучения',
+        'icon'  => 'fa fa-exclamation-circle',
+        'url'   => '#',
+        'id'    => 'coursess',
     ],
 
     [

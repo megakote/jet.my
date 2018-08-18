@@ -9,11 +9,6 @@ class Course extends Model
 {
     use Sluggable;
 
-    const TYPE = [
-        0 => 'Дистанционное обучение',
-        1 => 'Бизнес-авиация'
-    ];
-
     public function sluggable()
     {
         return [
@@ -36,5 +31,10 @@ class Course extends Model
             $data = explode('-', $this['date']);
             return $data;
         }
+    }
+
+    public function category()
+    {
+        return $this->belongsTo(CourseCategory::class);
     }
 }

@@ -15,7 +15,6 @@ use Faker\Generator as Faker;
 
 $factory->define(App\Models\Course::class, function (Faker $faker) {
     return [
-        'type' => $faker->numberBetween(0, 2),
         'name' => $faker->unique()->text(15),
         'duration' => '2 недели, 80 ак.ч.',
         'date' => $faker->date($format = 'Y-m-d', $max = '+70 days'),

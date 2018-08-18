@@ -2,7 +2,6 @@
 
 namespace Admin\Http\Sections;
 
-use App\Models\CourseCategory;
 use SleepingOwl\Admin\Section;
 use AdminDisplay;
 use AdminColumn;
@@ -12,10 +11,10 @@ use SleepingOwl\Admin\Contracts\Initializable;
 use SleepingOwl\Admin\Navigation\Page;
 use KodiComponents\Navigation\Contracts\PageInterface;
 
-use App\Models\Course;
+use App\Models\CourseCategory;
 
 
-class Courses extends Section implements Initializable
+class CourseCategories extends Section implements Initializable
 {
     /**
      * @var bool
@@ -38,14 +37,19 @@ class Courses extends Section implements Initializable
      */
     public function initialize()
     {
-        app()->booted(function () {
+        app()->booted(function() {
             $page = \AdminNavigation::getPages()->findById('courses');
             $page->setPages(function (PageInterface $subpage) {
-                $subpage->addPage(new Page(Course::class))
+                $subpage->addPage(new Page(CourseCategory::class))
                     ->setIcon('fa fa-building')
-                    ->setTitle('Курсы');
+                    ->setTitle('Категории курсов');
             });
         });
+
+//        $this->addToNavigation($priority = 500, function () {
+//            return Course::count();
+//        })->setIcon('fa fa-building');
+//        $this->title = 'Курсы';
     }
 
 
@@ -58,9 +62,7 @@ class Courses extends Section implements Initializable
         $display->setHtmlAttribute('class', 'table-primary')
             ->setColumns(
                 AdminColumn::text('id', '#')->setWidth('30px'),
-                AdminColumn::text('name', 'Название'),
-                AdminColumn::text('duration', 'Продолжительность'),
-                AdminColumn::datetime('date', 'Дата')
+                AdminColumn::text('name', 'Название')
             );
 
         return $display;
@@ -74,18 +76,9 @@ class Courses extends Section implements Initializable
      */
     public function onEdit($id)
     {
-
         $display = AdminForm::panel();
         $display->addBody([
-            AdminFormElement::text('name', 'Название')->required(),
-            ($id) ? AdminFormElement::text('slug', 'Короткий URL') : '',
-            AdminFormElement::text('description', 'Описание')->required(),
-            AdminFormElement::text('duration', 'Продолжительность')->required(),
-            AdminFormElement::date('date', 'Дата'),
-            AdminFormElement::text('price', 'Цена'),
-            AdminFormElement::select('category_id', 'Категория')
-                ->setModelForOptions(new CourseCategory())->setDisplay('name')->required(),
-            AdminFormElement::wysiwyg('content', 'Текст')->required()
+            AdminFormElement::text('name', 'Название')->required()
         ]);
 
         return $display;

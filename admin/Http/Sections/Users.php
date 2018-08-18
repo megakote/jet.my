@@ -76,8 +76,8 @@ class Users extends Section implements Initializable
         $display->addBody([
             AdminFormElement::text('name', 'Имя'),
             AdminFormElement::text('email', 'Почта')->required(),
-            AdminFormElement::select('role_id',
-                'Роль')->setOptions(User::ROLES)->required()
+            AdminFormElement::select('role_id', 'Роль')
+                ->setOptions(User::ROLES)->required()
         ]);
 
         return $display;
