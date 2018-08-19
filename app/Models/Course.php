@@ -10,9 +10,9 @@ class Course extends Model
     use \SleepingOwl\Admin\Traits\OrderableModel, Sluggable;
 
     const TYPE = [
-      0 => 'Дата',
-      1 => 'Online',
-      2 => 'По мере набора'
+        0 => 'Дата',
+        1 => 'Online',
+        2 => 'По мере набора'
     ];
 
     public function sluggable()
@@ -29,10 +29,6 @@ class Course extends Model
         return '/course/' . $this->slug;
     }
 
-    public function getTypeAttribute()
-    {
-        return '/course/' . $this->slug;
-    }
 
     public function getDateFormattedAttribute()
     {

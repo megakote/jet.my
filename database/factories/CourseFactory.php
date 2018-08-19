@@ -17,11 +17,12 @@ $factory->define(App\Models\Course::class, function (Faker $faker) {
     return [
         'name' => $faker->unique()->text(15),
         'duration' => '2 недели, 80 ак.ч.',
-        'date' => $faker->date($format = 'Y-m-d', $max = '+70 days'),
+        'date' => $faker->dateTimeBetween($startDate = 'now', $endDate = '+120 days', $timezone = null),
         'description' => $faker->text(50),
         'content' => $faker->text(350),
         'price' => $faker->numberBetween(1000, 5000),
         'category_id' => $faker->numberBetween(1, 3),
         'type' => $faker->numberBetween(0, 2),
+        'on_main' => $faker->numberBetween(0, 1),
     ];
 });
