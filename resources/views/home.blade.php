@@ -190,7 +190,7 @@
                                     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
                                         <div class="courses_box mb-5">
                                             <div class="course-img-wrap">
-                                                <img src="{{ $item->image_cover }}" class="img-fluid" alt="Biochemistry">
+                                                <img src="{{ $item->image }}" class="img-fluid" alt="Biochemistry">
                                                 <div class="courses_box-img"></div>
                                                 <div class="courses_box-img">
                                                     <div class="courses-link-wrap">

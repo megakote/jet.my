@@ -66,7 +66,7 @@ class MenuSeeder extends Seeder
         Menu::create([
             'parent_id' => $footer1->id,
             'title' => 'Новости',
-            'url' => '/'
+            'url' => '/news'
         ]);
         Menu::create([
             'parent_id' => $footer1->id,

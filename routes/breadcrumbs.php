@@ -35,3 +35,8 @@ Breadcrumbs::register('page', function ($trail, $title) {
     $trail->parent('home');
     $trail->push($title);
 });
+
+Breadcrumbs::register('news', function ($trail) {
+    $trail->parent('home');
+    $trail->push('Новости', route('news'));
+});

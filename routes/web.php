@@ -11,9 +11,6 @@
 |
 */
 
-
-\Debugbar::enable();
-
 Route::get('/get', function () {
 //    dispatch(new App\Jobs\Parsers\GetUsers());
 //    dispatch(new App\Jobs\Parsers\GetOrders());
@@ -26,6 +23,10 @@ Route::get('/', 'HomeController@index')->name('home');
 Route::get('/lk', 'LkController@index')->name('lk');
 Route::post('/lk/edit', 'LkController@edit')->name('lk.edit');
 Route::post('/orders', 'LkController@edit')->name('orders.put');
+
+
+Route::get('/news', 'NewsController@index')->name('news');
+Route::get('/news/{id}', 'NewsController@show')->name('news.show');
 
 
 Route::get('/personnel/', 'PersonnelController@index')->name('personnel');

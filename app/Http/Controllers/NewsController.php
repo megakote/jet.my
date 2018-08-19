@@ -10,17 +10,19 @@ use App\Models\News;
 class NewsController extends Controller
 {
 
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index(Request $request)
+    public function index()
     {
         $data = [
-            'news' => News::all()
+            'news_list' => News::paginate(10)
         ];
 
         return view('news_list', $data);
+    }
+
+    public function show($slug)
+    {
+        $page = News::where('slug', $slug)->first();
+
+        return view('page', $page);
     }
 }

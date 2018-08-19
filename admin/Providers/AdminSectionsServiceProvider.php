@@ -27,6 +27,7 @@ class AdminSectionsServiceProvider extends ServiceProvider
         'App\Models\MainPageSlider' => 'Admin\Http\Sections\MainPageSliders',
         'App\Models\CourseCategory' => 'Admin\Http\Sections\CourseCategories',
         'App\Models\Course' => 'Admin\Http\Sections\Courses',
+        'App\Models\News' => 'Admin\Http\Sections\News',
         'App\User' => 'Admin\Http\Sections\Users',
     ];
 
