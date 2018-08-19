@@ -54,10 +54,12 @@
                                                         <h4 class="vc_tta-panel-title vc_tta-controls-icon-position-left"><a href="#0{{ $course->id }}" data-vc-accordion data-vc-container=".vc_tta-container">
                                                                 <div class="anons_kurs_block">
                                                                     <div class="anons_kurs_block2">
-                                                                        @if(!$course->date)
-                                                                            <p>Online</p>
-                                                                        @else
+                                                                        @if($course->type == 0)
                                                                             <p>{{ $course->date_formatted[0] }}</p><span>{{ $course->date_formatted[1] }} {{ $course->date_formatted[2] }} г.</span>
+                                                                        @elseif($course->type == 1)
+                                                                            <p>Online</p>
+                                                                        @elseif($course->type == 2)
+                                                                            <p>По мере набора</p>
                                                                         @endif
 
                                                                     </div>

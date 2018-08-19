@@ -16,6 +16,7 @@ class CreateCoursesTable extends Migration
         Schema::create('courses', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('category_id');
+            $table->integer('type');
             $table->string('name');
             $table->string('duration');
             $table->string('slug');
@@ -23,6 +24,7 @@ class CreateCoursesTable extends Migration
             $table->text('content');
             $table->text('description');
             $table->integer('price');
+            $table->integer('order')->default(50);
             $table->boolean('on_main')->default(false);
             $table->timestamps();
         });

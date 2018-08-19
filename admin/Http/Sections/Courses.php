@@ -60,6 +60,7 @@ class Courses extends Section implements Initializable
                 AdminColumn::text('id', '#')->setWidth('30px'),
                 AdminColumn::text('name', 'Название'),
                 AdminColumn::text('duration', 'Продолжительность'),
+                AdminColumn::order()->setLabel('Порядок'),
                 AdminColumn::datetime('date', 'Дата')->setFormat('d.m.Y')
             );
 
@@ -81,7 +82,10 @@ class Courses extends Section implements Initializable
             ($id) ? AdminFormElement::text('slug', 'Короткий URL') : '',
             AdminFormElement::text('description', 'Описание')->required(),
             AdminFormElement::checkbox('on_main', 'На главной'),
+            AdminFormElement::select('type', 'Тип')
+                ->setOptions(Course::TYPE)->required(),
             AdminFormElement::text('duration', 'Продолжительность')->required(),
+            AdminFormElement::text('order', 'Порядок')->required(),
             AdminFormElement::date('date', 'Дата'),
             AdminFormElement::text('price', 'Цена'),
             AdminFormElement::select('category_id', 'Категория')

@@ -7,7 +7,13 @@ use Cviebrock\EloquentSluggable\Sluggable;
 
 class Course extends Model
 {
-    use Sluggable;
+    use \SleepingOwl\Admin\Traits\OrderableModel, Sluggable;
+
+    const TYPE = [
+      0 => 'Дата',
+      1 => 'Online',
+      2 => 'По мере набора'
+    ];
 
     public function sluggable()
     {
@@ -19,6 +25,11 @@ class Course extends Model
     }
 
     public function getUrlAttribute()
+    {
+        return '/course/' . $this->slug;
+    }
+
+    public function getTypeAttribute()
     {
         return '/course/' . $this->slug;
     }

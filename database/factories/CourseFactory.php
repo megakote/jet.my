@@ -22,5 +22,6 @@ $factory->define(App\Models\Course::class, function (Faker $faker) {
         'content' => $faker->text(350),
         'price' => $faker->numberBetween(1000, 5000),
         'category_id' => $faker->numberBetween(1, 3),
+        'type' => $faker->numberBetween(0, 2),
     ];
 });
