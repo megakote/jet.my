@@ -40,3 +40,15 @@ Breadcrumbs::register('news', function ($trail) {
     $trail->parent('home');
     $trail->push('Новости', route('news'));
 });
+
+Breadcrumbs::register('courses', function ($trail, $title) {
+    $trail->parent('home');
+    $trail->push('Курсы');
+    $trail->push($title);
+});
+
+Breadcrumbs::register('course', function ($trail, $title) {
+    $trail->parent('home');
+    $trail->push('Курс');
+    $trail->push($title);
+});

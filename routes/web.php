@@ -29,6 +29,10 @@ Route::get('/news', 'NewsController@index')->name('news');
 Route::get('/news/{id}', 'NewsController@show')->name('news.show');
 
 
+Route::get('/courses/{slug}', 'CourseController@index')->name('courses');
+Route::get('/course/{slug}', 'CourseController@show')->name('course');
+
+
 Route::get('/personnel/', 'PersonnelController@index')->name('personnel');
 Route::get('/personnel/{id}', 'PersonnelController@show')->name('persona');
 

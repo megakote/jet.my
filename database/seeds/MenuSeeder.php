@@ -22,11 +22,22 @@ class MenuSeeder extends Seeder
             'title' => 'Главная',
             'url' => '/'
         ]);
-        Menu::create([
+        $learning = Menu::create([
             'parent_id' => $menu_top->id,
             'title' => 'Обучение',
             'url' => '/'
         ]);
+
+        $courseCategories = \App\Models\CourseCategory::all();
+
+        foreach ($courseCategories as $courseCategory) {
+            Menu::create([
+                'parent_id' => $learning->id,
+                'title' => $courseCategory->name,
+                'url' => '/courses/' . $courseCategory->slug
+            ]);
+        }
+
         Menu::create([
             'parent_id' => $menu_top->id,
             'title' => 'Дистанционное обучение',

@@ -47,7 +47,15 @@
             </div>
             <ul class="menu2">
                 @foreach($menu_header as $item)
-                    <li><a href="{{ $item->url }}" {{ (request()->path() == $item->url) ? 'class="active"' : '' }}>{{ $item->title }}</a></li>
+                    <li><a href="{{ $item->url }}" {{ (request()->path() == $item->url) ? 'class=active' : '' }}>{{ $item->title }}</a>
+                        @if($item->descendants->count())
+                            <ul class="sub_menu">
+                                @foreach($item->descendants as $subMenuItem)
+                                    <li><a href="{{ $subMenuItem->url }}" {{ (request()->path() == $subMenuItem->url) ? 'class=active' : '' }}>{{ $subMenuItem->title }}</a>
+                                @endforeach
+                            </ul>
+                        @endif
+                    </li>
                 @endforeach
             </ul>
         </div>
