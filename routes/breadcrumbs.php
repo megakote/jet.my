@@ -43,12 +43,16 @@ Breadcrumbs::register('news', function ($trail) {
 
 Breadcrumbs::register('courses', function ($trail, $title) {
     $trail->parent('home');
-    $trail->push('Курсы');
+    $trail->push('Обучение', route('courses-list'));
     $trail->push($title);
 });
 
 Breadcrumbs::register('course', function ($trail, $title) {
     $trail->parent('home');
-    $trail->push('Курс');
+    $trail->push('Обучение', route('courses-list'));
     $trail->push($title);
+});
+Breadcrumbs::register('courses-list', function ($trail) {
+    $trail->parent('home');
+    $trail->push('Обучение');
 });

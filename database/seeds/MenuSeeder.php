@@ -25,7 +25,7 @@ class MenuSeeder extends Seeder
         $learning = Menu::create([
             'parent_id' => $menu_top->id,
             'title' => 'Обучение',
-            'url' => '/'
+            'url' => '/courses'
         ]);
 
         $courseCategories = \App\Models\CourseCategory::all();

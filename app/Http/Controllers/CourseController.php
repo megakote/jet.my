@@ -18,6 +18,19 @@ class CourseController extends Controller
         return view('courses', $data);
     }
 
+    public function list()
+    {
+        $categories = CourseCategory::all();
+        $data = ['coursesList'];
+        foreach ($categories as $category) {
+            $data['coursesList'][] = [
+                'title' => $category->name,
+                'courses' => $category->courses()->get()
+            ];
+        }
+        return view('courses-list', $data);
+    }
+
     public function show($slug)
     {
         $page = Course::where('slug', $slug)->first();

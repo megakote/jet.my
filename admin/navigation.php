@@ -48,19 +48,6 @@ $navigation->setFromArray([
         'url'   => '#',
         'id'    => 'courses',
     ],
-    [
-        'title' => 'Обучения',
-        'icon'  => 'fa fa-exclamation-circle',
-        'url'   => '#',
-        'id'    => 'coursess',
-    ],
-
-    [
-        'title' => 'Дистанциионные обучения',
-        'icon'  => 'fa fa-exclamation-circle',
-        'url'   => '#',
-        'id'    => 'dist_courses',
-    ],
 
     [
         'title' => 'База резюме',
