@@ -217,7 +217,7 @@
             </div>
         </div>
     </div>
-
+{{--
     <div class="fon4_dep">
         <div class="container">
             <div class="fon2_text3">
@@ -238,24 +238,24 @@
             </div>
         </div>
     </div>
-
+--}}
 
 
     <div style="clear:both"></div>
-
-    <div class="owl-carousel owl-car owl-theme">
-        @foreach($albums as $album)
-            <div class="item">
-                <div class="instafeed_img">
-                    <a href="{{ $album->url }}" target="_blank">
-                        <div class="instagram_img_holder" style="background-image: url({{ $album->cover_image }});">
-                        </div>
-                        <div class="instafeed_img_overlay"><span style="font-size:16px;">{!! $album->title !!}</span></div>
-                    </a>
+    {{--
+        <div class="owl-carousel owl-car owl-theme">
+            @foreach($albums as $album)
+                <div class="item">
+                    <div class="instafeed_img">
+                        <a href="{{ $album->url }}" target="_blank">
+                            <div class="instagram_img_holder" style="background-image: url({{ $album->cover_image }});">
+                            </div>
+                            <div class="instafeed_img_overlay"><span style="font-size:16px;">{!! $album->title !!}</span></div>
+                        </a>
+                    </div>
                 </div>
-            </div>
-        @endforeach
+            @endforeach
 
-    </div>
-
+        </div>
+        --}}
 @endsection
