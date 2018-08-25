@@ -15,6 +15,5 @@ class Controller extends BaseController
     {
         $accessList = \App\Models\Access::all()->sortBy('days');
         view()->share('access_list', $accessList);
-        parent::__construct();
     }
 }
