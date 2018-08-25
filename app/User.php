@@ -94,7 +94,14 @@ class User extends Authenticatable
 
     public function photos()
     {
-        return $this->hasMany(UserPhoto::class, 'user_id');
+        $photos = $this->hasMany(UserPhoto::class, 'user_id')->getResults();
+        if ($photos->count()) {
+            return $photos;
+        }
+
+        return collect([
+            ['src' => 'https://jet-service.org/cache/W2500901525943352_e42b3f54a6f5440da34af0f5c9f0ea23.jpeg']
+        ]);
     }
 
 

@@ -27,7 +27,7 @@
                                 <div class="col-md-4 text-center">
                                     <section class="col-md-12 widget widget_unisco_instructor_widget">
                                         <div class="my-5">
-                                            <a href=""><img src="{{ $user->photos()->first()->src }}" class="img-fluid" alt=""></a>
+                                            <a href=""><img src="{{ $user->photos()->first()['src'] }}" class="img-fluid" alt=""></a>
                                             <p><strong>ID:</strong>{{ $user->id }}<br><span>{{ $user->name }}</span></p>
                                             <a href="{{ route('persona', $user->id) }}" class="btn btn-default">Еще Фото</a>
                                         </div>

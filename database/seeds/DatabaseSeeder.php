@@ -27,5 +27,6 @@ class DatabaseSeeder extends Seeder
         factory(App\Models\Review::class, 150)->create();
 
         $this->call(MenuSeeder::class);
+        $this->call(AccessSeeder::class);
     }
 }

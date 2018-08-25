@@ -15,8 +15,14 @@
                                 <p>Общая продолжительность занятий: {{ $duration }}</p>
                                 <p>Стоимость обучения: {{ $price }} р.</p>
 
-                                <strong>{{ \App\Models\Course::TYPE[$type] }}</strong>
-                                <a href="/signup/?id={{ $id }}" class="btn btn-default my-2">Записаться</a>
+                                <strong>
+                                    @if($type == 0)
+                                        {{ $date }}
+                                    @else
+                                        {{ \App\Models\Course::TYPE[$type] }}
+                                    @endif
+                                </strong>
+                                <a href="/order/course/?id={{ $id }}" class="btn btn-default my-2">Записаться</a>
                             </div>
                         </article>
                     </main>

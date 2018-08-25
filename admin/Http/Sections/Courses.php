@@ -109,7 +109,6 @@ class Courses extends Section implements Initializable
      */
     public function onDelete($id)
     {
-        // todo: remove if unused
     }
 
     /**
@@ -117,6 +116,5 @@ class Courses extends Section implements Initializable
      */
     public function onRestore($id)
     {
-        // todo: remove if unused
     }
 }

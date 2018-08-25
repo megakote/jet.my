@@ -26,6 +26,7 @@ class CreateCoursesTable extends Migration
             $table->integer('price');
             $table->integer('order')->default(50);
             $table->boolean('on_main')->default(false);
+            $table->softDeletes();
             $table->timestamps();
         });
     }

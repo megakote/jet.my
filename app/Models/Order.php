@@ -10,6 +10,11 @@ class Order extends Model
 {
     protected $guarded = [];
 
+    const TYPE = [
+        0 => Access::class,
+        1 => Course::class,
+    ];
+
 //    public function add(int $days, $email = null, User $user)
 //    {
 //        if (!$user->id) {
@@ -27,5 +32,10 @@ class Order extends Model
     public function user()
     {
         return $this->belongsTo(User::class, 'user_id');
+    }
+
+    public function product()
+    {
+        return $this->belongsTo($this::TYPE[$this->type], 'product_id');
     }
 }

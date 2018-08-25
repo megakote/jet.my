@@ -2,6 +2,7 @@
 
 namespace App\Http\ViewComposers;
 
+use App\Models\Access;
 use App\Models\Menu;
 use App\Models\Page;
 use Cache;
@@ -54,6 +55,9 @@ class TemplateComposer
         $menu_footer2 = Menu::where('place', 'footer2')->first()->descendants()->defaultOrder()->where('active', true)->get();
         $view->with('menu_footer2', $menu_footer2);
 
+
+//        $view->with('access_list', $accessList);
+//dd($accessList);
 //        Законсервировано до лучших времен
 //        if (request()->order_id) {
 //            $order = Order::where('nomer', request()->order_id)->first();

@@ -10,7 +10,18 @@ use Illuminate\Support\Str;
 
 class OrderController extends Controller
 {
-    public function add(User $user, Request $request)
+
+    public function access(Request $request)
+    {
+
+    }
+
+    public function accessAdd(Request $request)
+    {
+
+    }
+
+    private function add(User $user, Request $request)
     {
         if (!$user->id) {
             $user->fill([

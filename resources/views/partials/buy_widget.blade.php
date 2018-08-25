@@ -5,14 +5,11 @@
         </div>
     </div>
 </div>
-<form action="{{ route('orders.put') }}" method="post">
+<form action="{{ route('order.access.add') }}" method="post">
     <select class="form-control custom-select" name="admission_course">
-        <option value="">На 7 дней</option>
-        <option value="">На 12 дней</option>
-        <option value="">На 1 месяц</option>
-        <option value="">На 3 месяца</option>
-        <option value="">На 6 месяцев</option>
-        <option value="">На 1 год</option>
+        @foreach($access_list as $access)
+            <option value="{{ $access->id }}" data-price="{{ $access->price }}">{{ $access->name }}</option>
+        @endforeach
     </select>
     <div class="col-md-12 my-3 text-center">
         <label style="color:#FFF"><h4>Цена: 5000 руб</h4></label>

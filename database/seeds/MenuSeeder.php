@@ -40,8 +40,8 @@ class MenuSeeder extends Seeder
 
         Menu::create([
             'parent_id' => $menu_top->id,
-            'title' => 'Дистанционное обучение',
-            'url' => '/'
+            'title' => 'База резюме',
+            'url' => '/personnel/'
         ]);
         Menu::create([
             'parent_id' => $menu_top->id,

@@ -4,10 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Cviebrock\EloquentSluggable\Sluggable;
+use Illuminate\Database\Eloquent\SoftDeletes;
+use \SleepingOwl\Admin\Traits\OrderableModel;
 
 class Course extends Model
 {
-    use \SleepingOwl\Admin\Traits\OrderableModel, Sluggable;
+    use OrderableModel, SoftDeletes, Sluggable;
 
     const TYPE = [
         0 => 'Дата',

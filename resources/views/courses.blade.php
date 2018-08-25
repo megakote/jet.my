@@ -30,7 +30,7 @@
                                         <li>
                                             <p>Стоимость: {{ $course->price }} руб.</p>
                                             <a href="{{ $course->url }}" class="btn btn-default my-2">Подробнее</a>
-                                            <a href="/signup/?id={{ $course->id }}" class="btn btn-default my-2">Записаться</a>
+                                            <a href="/order/course/?id={{ $course->id }}" class="btn btn-default my-2">Записаться</a>
                                         </li>
                                     </ul>
                                 </div>

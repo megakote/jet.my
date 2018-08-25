@@ -13,7 +13,7 @@ class PersonnelController extends Controller
         $data = [];
         $data['users'] = User::where('published', true)->paginate(15);
         $data['all'] = User::where('published', true)->count();
-
+//dd($data['users']->items()[0]->photos()->first());
         return view('personnel', $data);
     }
 

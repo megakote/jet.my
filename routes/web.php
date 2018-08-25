@@ -11,6 +11,8 @@
 |
 */
 
+use App\Models\Access;
+
 Route::get('/get', function () {
 //    dispatch(new App\Jobs\Parsers\GetUsers());
 //    dispatch(new App\Jobs\Parsers\GetOrders());
@@ -22,7 +24,10 @@ Auth::routes();
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/lk', 'LkController@index')->name('lk');
 Route::post('/lk/edit', 'LkController@edit')->name('lk.edit');
-Route::post('/orders', 'LkController@edit')->name('orders.put');
+
+Route::post('/order/access', 'OrderController@access')->name('order.access');
+Route::post('/order/access', 'OrderController@accessAdd')->name('order.access.add');
+Route::post('/order/course', 'OrderController@course')->name('order.course');
 
 
 Route::get('/news', 'NewsController@index')->name('news');
@@ -37,7 +42,8 @@ Route::get('/course/{slug}', 'CourseController@show')->name('course');
 Route::get('/personnel/', 'PersonnelController@index')->name('personnel');
 Route::get('/personnel/{id}', 'PersonnelController@show')->name('persona');
 
-
+$accessList = Access::all()->sortBy('days');
+view()->share('access_list', $accessList);
 
 Route::get('/page/{slug}', function($slug){
 
