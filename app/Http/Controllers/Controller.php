@@ -10,4 +10,11 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
+
+    public function __construct()
+    {
+        $accessList = \App\Models\Access::all()->sortBy('days');
+        view()->share('access_list', $accessList);
+        parent::__construct();
+    }
 }

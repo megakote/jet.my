@@ -11,7 +11,6 @@
 |
 */
 
-use App\Models\Access;
 
 Route::get('/get', function () {
 //    dispatch(new App\Jobs\Parsers\GetUsers());
@@ -42,8 +41,6 @@ Route::get('/course/{slug}', 'CourseController@show')->name('course');
 Route::get('/personnel/', 'PersonnelController@index')->name('personnel');
 Route::get('/personnel/{id}', 'PersonnelController@show')->name('persona');
 
-$accessList = Access::all()->sortBy('days');
-view()->share('access_list', $accessList);
 
 Route::get('/page/{slug}', function($slug){
 
