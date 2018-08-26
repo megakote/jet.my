@@ -24,7 +24,7 @@
             </div>
         @endforeach
         --}}
-        <div class="row form-group text-center">
+        {{--<div class="row form-group text-center">
             <div class="col-lg-4 text-left">
                 <label>Возраст</label>
             </div>
@@ -37,7 +37,7 @@
                     <option value="30">30+</option>
                 </select>
             </div>
-        </div>
+        </div>--}}
         <div class="row form-group text-center">
             <div class="col-lg-4 text-left">
                 <label>Рост</label>
