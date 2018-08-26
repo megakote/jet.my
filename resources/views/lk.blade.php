@@ -17,7 +17,6 @@
                                 @else
                                     <li class="vc_tta-tab" data-vc-tab=""><a href="#a6" data-vc-tabs="" data-vc-container=".vc_tta"><span class="vc_tta-title-text">Оплата</span></a></li>
                                 @endif
-
                                 <li class="vc_tta-tab" data-vc-tab=""><a href="#a3" data-vc-tabs="" data-vc-container=".vc_tta"><span class="vc_tta-title-text">Мои заказы</span></a></li>
                             </ul>
                         </div>

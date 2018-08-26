@@ -3,7 +3,13 @@
 @section('content')
     <div class="vc-wrap">
         <div  class="container">
-            {{--{!! Breadcrumbs::render('page', $title)  !!}--}}
+            @if (\Session::has('success'))
+                <div class="alert alert-success">
+                    <ul>
+                        <li>{!! \Session::get('success') !!}</li>
+                    </ul>
+                </div>
+            @endif
             <div class="row">
                 <div class="col-md-12">
                     <form action="{{ route('order.course.add') }}" method="post">

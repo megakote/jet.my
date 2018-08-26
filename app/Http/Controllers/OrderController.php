@@ -21,31 +21,29 @@ class OrderController extends Controller
 
     public function accessAdd(Request $request)
     {
-
+        Order::create([
+            'user_id' => Auth::check() ? Auth::user()->id : '',
+            'data' => serialize($request->all()),
+            'type' => 0,
+            'product_id' => $request->id
+        ]);
+         return redirect()->back()->with('success', ['Ваша заявка была отправлена оператору']);
     }
 
     public function courseAdd(Request $request)
     {
-
+        Order::create([
+            'user_id' => Auth::check() ? Auth::user()->id : '',
+            'data' => serialize($request->all()),
+            'type' => 1,
+            'product_id' => $request->id
+        ]);
+         return redirect()->back()->with('success', ['Ваша заявка была отправлена оператору']);
     }
 
     public function course(Request $request)
     {
         $course = Course::findOrFail($request->id);
         return view('signup', compact($course));
-    }
-
-    private function add(User $user, Request $request)
-    {
-        if (!$user->id) {
-            $user->fill([
-                'email' => $request->email,
-                'password' => Str::random(10)
-            ])->save();
-        }
-        Order::create([
-            'user_id' => $user->id,
-            'days' => $request->days,
-        ]);
     }
 }
