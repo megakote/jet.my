@@ -16,7 +16,7 @@ class OrderController extends Controller
     public function access(Request $request)
     {
         $accessItem = Access::findOrFail($request->id);
-        return view('access', compact($accessItem));
+        return view('access', ['accessItem' => $accessItem]);
     }
 
     public function accessAdd(Request $request)
@@ -27,7 +27,7 @@ class OrderController extends Controller
             'type' => 0,
             'product_id' => $request->id
         ]);
-         return redirect()->back()->with('success', ['Ваша заявка была отправлена оператору']);
+         return redirect()->back()->with('success', 'Ваша заявка была отправлена оператору');
     }
 
     public function courseAdd(Request $request)
@@ -38,12 +38,12 @@ class OrderController extends Controller
             'type' => 1,
             'product_id' => $request->id
         ]);
-         return redirect()->back()->with('success', ['Ваша заявка была отправлена оператору']);
+         return redirect()->back()->with('success', 'Ваша заявка была отправлена оператору');
     }
 
     public function course(Request $request)
     {
         $course = Course::findOrFail($request->id);
-        return view('signup', compact($course));
+        return view('signup', ['course' => $course]);
     }
 }

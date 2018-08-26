@@ -27,7 +27,7 @@ Route::post('/lk/edit', 'LkController@edit')->name('lk.edit');
 Route::get('/order/access', 'OrderController@access')->name('order.access');
 Route::post('/order/access', 'OrderController@accessAdd')->name('order.access.add');
 Route::get('/order/course', 'OrderController@course')->name('order.course');
-Route::post('/order/course', 'OrderController@course')->name('order.course.add');
+Route::post('/order/course', 'OrderController@courseAdd')->name('order.course.add');
 
 
 Route::get('/news', 'NewsController@index')->name('news');

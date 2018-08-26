@@ -13,6 +13,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <form action="{{ route('order.course.add') }}" method="post">
+                        {{ csrf_field() }}
                         <input type="hidden" name="id" value="{{ $course->id }}">
                         <div class="row col-md-8" style="margin:0 auto;">
                             <div class="col-md-12">
@@ -69,7 +70,7 @@
                                     3.	Я прочитал(а) <a href="">Политику Конфиденциальности</a> и согласен(на) с ее положениями.
                                 <p>
                                 <div class="col-md-12 my-1 text-center">
-                                    <button class="btn btn-default btn-courses" name="admission_submit">Отправить заявку</button>
+                                    <button class="btn btn-default btn-courses">Отправить заявку</button>
                                 </div>
 
                             </div>

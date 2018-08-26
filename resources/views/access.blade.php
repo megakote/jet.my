@@ -13,6 +13,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <form action="{{ route('order.access.add') }}" method="post">
+                        {{ csrf_field() }}
                         <div class="row col-md-8" style="margin:0 auto;">
                             <div class="col-md-12">
                                 <div class="col-md-12 my-5 h2_marg" style="text-align:center" >
