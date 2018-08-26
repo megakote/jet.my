@@ -13,7 +13,7 @@ class OrderController extends Controller
 
     public function access(Request $request)
     {
-
+        return view('signup');
     }
 
     public function accessAdd(Request $request)

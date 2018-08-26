@@ -21,13 +21,8 @@ $(document).ready(function () {
         });
 
     }
-    //
-    // $('.menu2 > li').hover(
-    //     function() {
-    //         $(this).find('ul').show();
-    //     },
-    //     function() {
-    //         $(this).find('ul').hide();
-    //     }
-    // );
+
+    $('select[name="accessId"]').on('change', function (e) {
+        $('#accessPrice').text($(this).children('option:selected').data('price'));
+    })
 });

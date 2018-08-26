@@ -3,7 +3,7 @@
 @section('content')
     <div class="vc-wrap">
         <div  class="container">
-            {!! Breadcrumbs::render('page', $title)  !!}
+            {{--{!! Breadcrumbs::render('page', $title)  !!}--}}
             <div class="row">
                 <div class="col-md-12">
                     <form action="" method="post">
@@ -14,29 +14,29 @@
                                 </div>
                                 <div class="row form-group text-center">
                                     <div class="col-lg-4">
-                                        <input name="admission_first_name" class="form-control" value="" placeholder="Фамилимя">
+                                        <input type="text" name="surname" class="form-control" value="" placeholder="Фамилимя">
                                     </div>
                                     <div class="col-lg-4">
-                                        <input name="admission_first_name" class="form-control" value="" placeholder="Имя">
+                                        <input type="text" name="name" class="form-control" value="" placeholder="Имя*" required>
                                     </div>
                                     <div class="col-lg-4">
-                                        <input name="admission_first_name" class="form-control" value="" placeholder="Отчество">
+                                        <input type="text" name="patronymic" class="form-control" value="" placeholder="Отчество">
                                     </div>
                                 </div>
                                 <div class="row form-group text-center">
                                     <div class="col-lg-6">
-                                        <input name="admission_first_name" class="form-control" value="" placeholder="Телефон">
+                                        <input type="text" name="tel" class="form-control" value="" placeholder="Телефон*" required>
                                     </div>
                                     <div class="col-lg-6">
-                                        <input name="admission_first_name" class="form-control" value="" placeholder="E-mail">
+                                        <input type="email" name="email" class="form-control" value="" placeholder="E-mail*" required>
                                     </div>
                                 </div>
                                 <div class="row form-group text-center">
                                     <div class="col-lg-6">
-                                        <input name="admission_first_name" class="form-control" value="" placeholder="Skype">
+                                        <input type="text" name="skype" class="form-control" value="" placeholder="Skype">
                                     </div>
                                     <div class="col-lg-6">
-                                        <label><input type="checkbox" name="option2" value="">
+                                        <label><input type="checkbox" name="skype_conf" value="">
                                             Собеседование по Skype</label>
                                     </div>
                                 </div>
