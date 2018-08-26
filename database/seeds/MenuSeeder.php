@@ -56,7 +56,7 @@ class MenuSeeder extends Seeder
         Menu::create([
             'parent_id' => $menu_top->id,
             'title' => 'Контакты',
-            'url' => '/'
+            'url' => '/contacts'
         ]);
         Menu::create([
             'parent_id' => $menu_top->id,

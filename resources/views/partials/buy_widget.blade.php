@@ -6,7 +6,7 @@
     </div>
 </div>
 <form action="{{ route('order.access.add') }}" method="GET">
-    <select class="form-control custom-select" name="accessId">
+    <select class="form-control custom-select" name="id">
         @foreach($access_list as $access)
             <option value="{{ $access->id }}" data-price="{{ $access->price }}">{{ $access->name }}</option>
         @endforeach

@@ -27,6 +27,7 @@ Route::post('/lk/edit', 'LkController@edit')->name('lk.edit');
 Route::get('/order/access', 'OrderController@access')->name('order.access');
 Route::post('/order/access', 'OrderController@accessAdd')->name('order.access.add');
 Route::get('/order/course', 'OrderController@course')->name('order.course');
+Route::post('/order/course', 'OrderController@course')->name('order.course.add');
 
 
 Route::get('/news', 'NewsController@index')->name('news');
@@ -42,11 +43,20 @@ Route::get('/personnel/', 'PersonnelController@index')->name('personnel');
 Route::get('/personnel/{id}', 'PersonnelController@show')->name('persona');
 
 
+Route::post('/contacts', function(Request $request){
+//    return view('contacts');
+})->name('contact.put');
+
+
 Route::get('/page/{slug}', function($slug){
 
     $page = App\Models\Page::where('slug', $slug)->first();
 
     return ($page) ? view('page', $page) : abort(404);
+});
+
+Route::get('/contacts', function(){
+    return view('contacts');
 });
 
 

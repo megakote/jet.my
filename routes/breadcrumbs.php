@@ -56,3 +56,7 @@ Breadcrumbs::register('courses-list', function ($trail) {
     $trail->parent('home');
     $trail->push('Обучение');
 });
+Breadcrumbs::register('contacts', function ($trail) {
+    $trail->parent('home');
+    $trail->push('Контакты');
+});
