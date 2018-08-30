@@ -84,7 +84,7 @@ class Courses extends Section implements Initializable
             AdminFormElement::checkbox('on_main', 'На главной'),
             AdminFormElement::select('type', 'Тип')
                 ->setOptions(Course::TYPE)->required(),
-            AdminFormElement::text('duration', 'Продолжительность')->required(),
+            AdminFormElement::text('duration', 'Продолжительность'),
             AdminFormElement::text('order', 'Порядок')->required(),
             AdminFormElement::date('date', 'Дата'),
             AdminFormElement::text('price', 'Цена'),

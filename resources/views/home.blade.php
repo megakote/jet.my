@@ -73,6 +73,10 @@
                                                         <div class="wpb_text_column wpb_content_element " >
                                                             <div class="wpb_wrapper left_block_anons">
                                                                 {!!  $course->description !!}
+                                                                <br>
+                                                                <hr>
+                                                                <a href="{{ $course->url }}" class="btn btn-default my-2">Подробнее</a>
+                                                                <a href="/order/course/?id={{ $course->id }}" class="btn btn-default my-2">Записаться</a>
                                                             </div>
                                                         </div>
                                                     </div>

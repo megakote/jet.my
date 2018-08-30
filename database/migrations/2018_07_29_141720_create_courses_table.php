@@ -18,7 +18,7 @@ class CreateCoursesTable extends Migration
             $table->integer('category_id');
             $table->integer('type');
             $table->string('name');
-            $table->string('duration');
+            $table->string('duration')->nullable();
             $table->string('slug');
             $table->date('date')->nullable();
             $table->text('content');
