@@ -14,11 +14,13 @@
                                             data-vc-container=".vc_tta"><span
                                                 class="vc_tta-title-text">Настройки</span></a>
                                 </li>
+                                {{--
                                 <li class="vc_tta-tab" data-vc-tab=""><a href="#a2"
                                                                          data-vc-tabs=""
                                                                          data-vc-container=".vc_tta"><span
                                                 class="vc_tta-title-text">Галерея</span></a>
                                 </li>
+                                --}}
                                 <li class="vc_tta-tab" data-vc-tab=""><a href="#a5"
                                                                          data-vc-tabs=""
                                                                          data-vc-container=".vc_tta"><span
@@ -36,11 +38,13 @@
                                                     class="vc_tta-title-text">Оплата</span></a>
                                     </li>
                                 @endif
+                                {{--
                                 <li class="vc_tta-tab" data-vc-tab=""><a href="#a3"
                                                                          data-vc-tabs=""
                                                                          data-vc-container=".vc_tta"><span
                                                 class="vc_tta-title-text">Мои заказы</span></a>
                                 </li>
+                                --}}
                             </ul>
                         </div>
                         <div class="vc_tta-panels-container">
@@ -321,7 +325,25 @@
                                                         <td>
                                                             Цена
                                                         </td>
+                                                        <td>
+                                                        </td>
                                                     </tr>
+                                                    @foreach($courses as $course)
+                                                        <tr>
+                                                            <td>
+                                                                {{ $course->id }}
+                                                            </td>
+                                                            <td>
+                                                                {{ $course->name }}
+                                                            </td>
+                                                            <td>
+                                                                {{ $course->price }} р.
+                                                            </td>
+                                                            <td>
+                                                                <a href="{{ $course->url }}" class="btn btn-default my-2">Подробнее</a>
+                                                            </td>
+                                                        </tr>
+                                                    @endforeach
                                                 </table>
                                             </div>
                                         </div>

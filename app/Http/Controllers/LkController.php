@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Course;
 use Illuminate\Http\Request;
 
 use Auth;
@@ -18,6 +19,7 @@ class LkController extends Controller
 
         $data = [];
         $data['user'] = Auth::user();
+        $data['courses'] = Course::all();
 
         return view('lk', $data);
     }
