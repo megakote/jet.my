@@ -11,10 +11,10 @@ use SleepingOwl\Admin\Contracts\Initializable;
 use SleepingOwl\Admin\Navigation\Page;
 use KodiComponents\Navigation\Contracts\PageInterface;
 
-use App\Models\Order;
+use App\Models\MainPageReviews as MainPageReview;
 
 
-class Orders extends Section implements Initializable
+class MainPageReviews extends Section implements Initializable
 {
     /**
      * @var bool
@@ -37,19 +37,14 @@ class Orders extends Section implements Initializable
      */
     public function initialize()
     {
-//        app()->booted(function() {
-//            $page = \AdminNavigation::getPages()->findById('supplier');
-//            $page->setPages(function (PageInterface $subpage) {
-//                $subpage->addPage(new Page(NewsModel::class))
-//                    ->setIcon('fa fa-building')
-//                    ->setTitle('Города');
-//            });
-//        });
-
-        $this->addToNavigation($priority = 500, function () {
-            return Order::count();
-        })->setIcon('fa fa-building');
-        $this->title = 'Заявки';
+        app()->booted(function () {
+            $page = \AdminNavigation::getPages()->findById('main_page');
+            $page->setPages(function (PageInterface $subpage) {
+                $subpage->addPage(new Page(MainPageReview::class))
+                    ->setIcon('fa fa-building')
+                    ->setTitle('Отзывы на главной');
+            });
+        });
     }
 
 
@@ -62,19 +57,12 @@ class Orders extends Section implements Initializable
         $display->setHtmlAttribute('class', 'table-primary')
             ->setColumns(
                 AdminColumn::text('id', '#')->setWidth('30px'),
-                AdminColumn::custom('Юзер', function ($model) {
-                    return $model->user_id ? $model->user->name : 'Нужно создать';
-                }),
-                AdminColumn::custom('Оплачена', function ($model) {
-                    return $model->payed ? "Да" : "Нет";
-                }),
-                AdminColumn::custom('Тип', function ($model) {
-                    return Order::TYPE[$model->type];
-                })
+                AdminColumn::text('name', 'Имя'),
+                AdminColumn::image('image', 'Аватарка'),
+                AdminColumn::order()->setLabel('Порядок')
             );
 
         return $display;
-
     }
 
     /**
@@ -86,15 +74,14 @@ class Orders extends Section implements Initializable
     {
         $display = AdminForm::panel();
         $display->addBody([
-            AdminFormElement::text('title', 'Заголовок')->required()->unique(),
-            ($id) ? AdminFormElement::text('slug', 'Короткий URL') : '',
-            AdminFormElement::text('description', 'Описание'),
+            AdminFormElement::text('name', 'Имя')->required(),
+            AdminFormElement::text('image', 'Аватарка')->required(),
+            AdminFormElement::text('order', 'Порядок')->required(),
             AdminFormElement::wysiwyg('body', 'Текст')->required()
         ]);
 
         return $display;
     }
-
     /**
      * @return FormInterface
      */
