@@ -9,7 +9,7 @@ class PhotoAlbum extends Model
 {
     use Sluggable;
 
-    protected $fillable = array('name','description','cover_image');
+    protected $guarded = [];
 
     public function sluggable()
     {
@@ -23,9 +23,5 @@ class PhotoAlbum extends Model
     public function getUrlAttribute()
     {
         return '/albums/' . $this->slug;
-    }
-    public function Photos(){
-
-        return $this->has_many(Photo::class);
     }
 }

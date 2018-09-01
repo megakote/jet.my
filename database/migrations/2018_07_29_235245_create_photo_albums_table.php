@@ -19,6 +19,7 @@ class CreatePhotoAlbumsTable extends Migration
             $table->string('slug')->unique();
             $table->text('description');
             $table->string('cover_image');
+            $table->string('images');
             $table->boolean('on_main')->default(false);
             $table->timestamps();
         });

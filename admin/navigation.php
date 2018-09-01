@@ -49,13 +49,6 @@ $navigation->setFromArray([
         'id'    => 'courses',
     ],
 
-    [
-        'title' => 'База резюме',
-        'icon'  => 'fa fa-exclamation-circle',
-        'url'   => '#',
-        'id'    => 'resumes',
-    ],
-
     // Examples
     // [
     //    'title' => 'Content',

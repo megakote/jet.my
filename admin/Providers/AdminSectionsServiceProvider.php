@@ -30,6 +30,7 @@ class AdminSectionsServiceProvider extends ServiceProvider
         'App\Models\Course' => 'Admin\Http\Sections\Courses',
         'App\Models\News' => 'Admin\Http\Sections\News',
         'App\Models\Order' => 'Admin\Http\Sections\Orders',
+        'App\Models\PhotoAlbum' => 'Admin\Http\Sections\PhotoAlbums',
         'App\User' => 'Admin\Http\Sections\Users',
     ];
 

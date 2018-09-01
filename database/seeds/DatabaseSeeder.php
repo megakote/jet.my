@@ -18,7 +18,6 @@ class DatabaseSeeder extends Seeder
         factory(App\User::class, 50)->create();
         factory(App\Models\News::class, 50)->create();
         factory(App\Models\MainPageReviews::class, 5)->create();
-        factory(App\Models\Photo::class, 200)->create();
         factory(App\Models\UserPhoto::class, 200)->create();
         factory(App\Models\PhotoAlbum::class, 30)->create();
         factory(App\Models\MainPageSlider::class, 7)->create();
