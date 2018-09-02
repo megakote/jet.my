@@ -60,3 +60,8 @@ Breadcrumbs::register('contacts', function ($trail) {
     $trail->parent('home');
     $trail->push('Контакты');
 });
+
+Breadcrumbs::register('about', function ($trail) {
+    $trail->parent('home');
+    $trail->push('О нас');
+});

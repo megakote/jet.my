@@ -181,7 +181,7 @@
                                                                             изменения:</strong></label>
                                                                 </div>
                                                                 <div class="col-lg-8">
-                                                                    <label>{{ $user->updated_at }}</label>payed_to
+                                                                    <label>{{ $user->updated_at }}</label>
                                                                 </div>
                                                             </div>
                                                             <div class="row form-group text-left">
@@ -191,7 +191,13 @@
                                                                             аккаунта:</strong></label>
                                                                 </div>
                                                                 <div class="col-lg-8">
-                                                                    <label>{{ $user->payed_to }}</label>
+                                                                    <label>
+                                                                        @if($user->payed_to)
+                                                                            {{ $user->payed_to }}
+                                                                        @else
+                                                                            Нет
+                                                                        @endif
+                                                                        </label>
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-12 my-1 text-left">
