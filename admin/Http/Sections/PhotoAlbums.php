@@ -37,14 +37,10 @@ class PhotoAlbums extends Section implements Initializable
      */
     public function initialize()
     {
-        app()->booted(function() {
-            $page = \AdminNavigation::getPages()->findById('photos');
-            $page->setPages(function (PageInterface $subpage) {
-                $subpage->addPage(new Page(PhotoAlbum::class))
-                    ->setIcon('fa fa-building')
-                    ->setTitle('Альбомы');
-            });
-        });
+        $this->addToNavigation($priority = 500, function () {
+            return PhotoAlbum::count();
+        })->setIcon('fa fa-building');
+        $this->title = 'Альбомы';
     }
 
 

@@ -207,7 +207,7 @@
                                             <div class="courses_icon">
                                                 <img src="/img/plus-icon.png" class="img-fluid close-icon" alt="plus-icon">
                                             </div>
-                                            <a href="" class="course-box-content">
+                                            <a href="{{ $item->url }}" class="course-box-content">
                                                 <h3>{{ $item->created_at->format('Y.M.d') }}</h3>
                                                 <p>{{ $item->description }}</p>
                                             </a>

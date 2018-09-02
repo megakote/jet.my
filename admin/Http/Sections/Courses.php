@@ -82,6 +82,7 @@ class Courses extends Section implements Initializable
             ($id) ? AdminFormElement::text('slug', 'Короткий URL') : '',
             AdminFormElement::text('description', 'Описание')->required(),
             AdminFormElement::checkbox('on_main', 'На главной'),
+            AdminFormElement::checkbox('distantly', 'Дистанционный'),
             AdminFormElement::select('type', 'Тип')
                 ->setOptions(Course::TYPE)->required(),
             AdminFormElement::text('duration', 'Продолжительность'),
