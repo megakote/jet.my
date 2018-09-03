@@ -62,7 +62,8 @@ class CourseCategories extends Section implements Initializable
         $display->setHtmlAttribute('class', 'table-primary')
             ->setColumns(
                 AdminColumn::text('id', '#')->setWidth('30px'),
-                AdminColumn::text('name', 'Название')
+                AdminColumn::text('name', 'Название'),
+                AdminColumn::text('slug', 'Адрес')
             );
 
         return $display;
@@ -78,7 +79,8 @@ class CourseCategories extends Section implements Initializable
     {
         $display = AdminForm::panel();
         $display->addBody([
-            AdminFormElement::text('name', 'Название')->required()
+            AdminFormElement::text('name', 'Название')->required(),
+            ($id) ? AdminFormElement::text('slug', 'Короткий URL') : ''
         ]);
 
         return $display;
