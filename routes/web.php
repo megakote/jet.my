@@ -35,6 +35,7 @@ Route::get('/news/{id}', 'NewsController@show')->name('news.show');
 
 
 Route::get('/courses', 'CourseController@list')->name('courses-list');
+Route::get('/distantly', 'CourseController@distantly')->name('courses-distantly');
 Route::get('/courses/{slug}', 'CourseController@index')->name('courses');
 Route::get('/course/{slug}', 'CourseController@show')->name('course');
 

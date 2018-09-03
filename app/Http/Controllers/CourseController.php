@@ -37,4 +37,16 @@ class CourseController extends Controller
 
         return view('course', $page);
     }
+
+    public function distantly()
+    {
+        $courses = Course::where('distantly', true)->get();
+
+        return view('courses-list', [
+            'title' => 'Дистанционные курсы',
+            'courses' => $courses
+        ]);
+    }
+
+
 }
