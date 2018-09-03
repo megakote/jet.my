@@ -59,5 +59,11 @@ Route::get('/contacts', function(){
     return view('contacts');
 });
 
+Route::get('/about/{slug}', function($slug){
+    $rightColumn = \App\Models\AboutPage::all();
+    $page = App\Models\AboutPage::where('slug', $slug)->first();
+    return view('about', compact($rightColumn, $page));
+});
+
 
 

@@ -17,8 +17,12 @@
                                     </div>
                                     <div class="research-posts">
                                         <div class="research-news_block">
-                                            <span>16-августа-17</span>
-                                            <p>Lorem Ipsum - просто фиктивный текст печатной и печатной промышленности ... ...</p>
+                                            @foreach($rightColumn as $link)
+                                                <a href="{{ $link->url }}">
+                                                    <span>{{ $link->title }}</span>
+                                                </a>
+                                                <p>{{ $link->description }}</p>
+                                            @endforeach
                                         </div>
                                     </div>
                                 </div>
@@ -30,10 +34,10 @@
                     <main class="site-main">
                         <article>
                             <div class="col-md-12 my-5 h2_marg" style="text-align:center" >
-                                <h2>{{ $title }}</h2>
+                                <h2>{{ $page->title }}</h2>
                             </div>
                             <div class="entry-content">
-                                {{ $body }}
+                                {{ $page->body }}
                             </div>
                         </article>
                     </main>

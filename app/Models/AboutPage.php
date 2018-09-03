@@ -2,10 +2,10 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
 use Cviebrock\EloquentSluggable\Sluggable;
+use Illuminate\Database\Eloquent\Model;
 
-class Page extends Model
+class AboutPage extends Model
 {
     use Sluggable;
 
@@ -20,6 +20,8 @@ class Page extends Model
 
     public function getUrlAttribute()
     {
-        return '/page/' . $this->slug;
+        return '/about/' . $this->slug;
     }
+
+
 }
