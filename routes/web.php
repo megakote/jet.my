@@ -64,6 +64,13 @@ Route::get('/about/{slug}', function($slug){
     $page = App\Models\AboutPage::where('slug', $slug)->first();
     return view('about', compact($rightColumn, $page));
 });
+Route::get('/albums/{slug}', function($slug){
+    $page = App\Models\PhotoAlbum::where('slug', $slug)->first();
+    return view('album', [
+        'title' => $page->title,
+        'images' => json_decode($page->images),
+    ]);
+});
 
 
 

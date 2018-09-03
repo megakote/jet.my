@@ -221,7 +221,7 @@
             </div>
         </div>
     </div>
-{{--
+
     <div class="fon4_dep">
         <div class="container">
             <div class="fon2_text3">
@@ -242,11 +242,10 @@
             </div>
         </div>
     </div>
---}}
+
 
 
     <div style="clear:both"></div>
-    {{--
         <div class="owl-carousel owl-car owl-theme">
             @foreach($albums as $album)
                 <div class="item">
@@ -261,5 +260,4 @@
             @endforeach
 
         </div>
-        --}}
 @endsection
